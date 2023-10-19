@@ -3,14 +3,13 @@ import { AnimationKey, AudioKey } from "../types/PhaserKey";
 import type { NavKeys } from "../types/NavKeys";
 import type PlayerSelector from "./PlayerSelector";
 import ComputerItem from "../item/ComputerItem";
-import { isMonitorOpen, openPage } from "../store/store";
-
+import { isMonitorOpen, currentPage } from "../store/store";
 import { PageKey } from "../types/SvelteKey";
 import AudioManager from "../audio/Audio";
+import { EventKey, emitter } from "../event/PhaserEvent";
 
 export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
   private PLAYER_VELOCITY: number = 200;
-
   private isMovable: boolean = true;
   private isKeyPressedOnce: boolean = false;
 
@@ -76,8 +75,12 @@ export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
       const selectedItem = playerSelector.selectedItem;
       if (!selectedItem) return;
       if (selectedItem instanceof ComputerItem) {
-        openPage.set(selectedItem.computerPage);
-        if (selectedItem.computerPage === PageKey.NONE) return;
+        if (selectedItem.computerPage === PageKey.NONE) {
+          emitter.emit(EventKey.SELECTED, selectedItem);
+          return;
+        }
+
+        currentPage.set(selectedItem.computerPage);
       }
       AudioManager.playRun(false);
       isMonitorOpen.openPage();

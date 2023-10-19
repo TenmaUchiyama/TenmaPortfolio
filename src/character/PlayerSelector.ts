@@ -2,7 +2,7 @@ import Phaser from "phaser";
 import type MyPlayer from "./MyPlayer";
 import type { NavKeys } from "../types/NavKeys";
 import type Item from "../item/Item";
-import { openPage } from "../store/store";
+import { currentPage } from "../store/store";
 import { PageKey } from "../types/SvelteKey";
 
 export default class PlayerSelector extends Phaser.GameObjects.Zone {
@@ -41,7 +41,7 @@ export default class PlayerSelector extends Phaser.GameObjects.Zone {
       if (!this.scene.physics.overlap(this, this.selectedItem)) {
         this.selectedItem.clearDialogBox();
         this.selectedItem = undefined;
-        openPage.set(PageKey.NONE);
+        currentPage.set(PageKey.NONE);
       }
     }
   }

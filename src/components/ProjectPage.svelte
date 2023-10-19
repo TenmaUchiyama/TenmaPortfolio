@@ -178,17 +178,6 @@
 </main>
 
 
-<!-- <h1>Project</h1>
-<div class="container">
-
-	{#each projects as prj}
-		<div class="prj-box">
-			<img src={prj.img} alt="" />
-			<h1>{prj.title}</h1>
-			<p>Skills: {prj.skill}</p>
-		</div>
-	{/each}
-</div> -->
 
 <style>
 	main{

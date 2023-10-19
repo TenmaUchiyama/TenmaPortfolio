@@ -8,9 +8,11 @@ import AudioManager from "../audio/Audio";
 
 export const displayLanguage = writable<string>("ja");
 
-export const openPage = writable<PageKey>(PageKey.NONE);
+export const currentPage = writable<PageKey>(PageKey.NONE);
 
-function openPageTest() {
+export const isBgmOn = writable<boolean>(false);
+
+function monitorOpen() {
   const { subscribe, set, update } = writable<boolean>(true);
 
   return {
@@ -48,4 +50,4 @@ function openPageTest() {
   };
 }
 
-export const isMonitorOpen = openPageTest();
+export const isMonitorOpen = monitorOpen();

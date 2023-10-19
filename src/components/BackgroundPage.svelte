@@ -180,17 +180,19 @@
 .content{
 	width: 100% ;
 }
+
+
 .content p 
 {
 	gap: 10px;
 }
 .educationItem img {
-	width: 200px;
+	width: 15%;
 	margin-left: 10%;
 }
 
 .icon{
-	max-width: 2rem;
+	max-width: 4%;
 	margin-right: 10px;
 }
 

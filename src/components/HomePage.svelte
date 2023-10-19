@@ -8,9 +8,9 @@
 </script>
 
 <main class="container profile">
-	<div class="row align-items-center">
+	<div class="row align-items-center" >
 		<div class="col-md-6">
-			<img src={face} alt="Your Face" class="img-thumbnail"  style="max-width: 500px;"/>
+			<img src={face} alt="Your Face" class="img-thumbnail"  style="max-width: 80%;"/>
 		</div>
 		<div class="col-md-6">
 			<div class="content">
@@ -31,8 +31,9 @@
 		flex-direction: row;
 		align-content: center;
 		justify-content: center;	
-		
 		gap: 50px;
+		height: 80%;
+	
 	}
 
 	#name {
@@ -41,11 +42,11 @@
 	}
 
 	.profile .content {
-		max-width: 600px;
+		max-width: 100%;
 		border-style: solid;
 		border-width: 2px;
 		border-radius: 20px;
 		background-color: #ededed;
-		padding: 20px;
+		padding: 5%;
 	}
 </style>

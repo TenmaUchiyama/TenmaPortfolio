@@ -15,6 +15,7 @@ import ComputerItem from "../item/ComputerItem";
 import type Item from "../item/Item";
 import { PageKey } from "../types/SvelteKey";
 import AudioManager from "../audio/Audio";
+import { EventKey, emitter } from "../event/PhaserEvent";
 
 export default class Game extends Phaser.Scene {
   private MAPSCALE: number = 2;
@@ -23,6 +24,9 @@ export default class Game extends Phaser.Scene {
   private keySpace!: Phaser.Input.Keyboard.Key | undefined;
   private map!: Phaser.Tilemaps.Tilemap;
   private playerSelector!: PlayerSelector;
+
+  //temp
+  //170 for on 169 for off
 
   constructor() {
     super(SceneKey.GAME);
@@ -90,6 +94,7 @@ export default class Game extends Phaser.Scene {
 
     computerLayer1!.objects.forEach((obj) => {
       const computer = this.addItem(computer1, obj) as ComputerItem;
+      console.log(obj.id - 1);
       computer.setComputerPage(PageKey.HOBBY);
     });
     const computer2 = this.physics.add.staticGroup({
@@ -141,7 +146,19 @@ export default class Game extends Phaser.Scene {
       undefined,
       this
     );
+
+    emitter.on(EventKey.SELECTED, (selectedItem: ComputerItem) => {
+      this.removeOldObject(computer5, selectedItem);
+    });
   }
+
+  removeOldObject(
+    group: Phaser.Physics.Arcade.StaticGroup,
+    oldObject: ComputerItem // 以前のオブジェクト
+  ) {
+    group.remove(oldObject, true, true); // オブジェクトを削除し、破棄する
+  }
+
   private onItemOverlap(playerSelector: any, selectionItem: any) {
     const currentItem = playerSelector.selectedItem as Item;
     // currentItem is undefined if nothing was perviously selected
@@ -166,6 +183,7 @@ export default class Game extends Phaser.Scene {
   ) {
     const x = object.x! + object.width! * 0.5;
     const y = object.y! - object.height! * 0.5;
+
     const obj = group.get(x, y, MapKey.MAPIMG, object.gid! - 1).setDepth(y);
     return obj;
   }

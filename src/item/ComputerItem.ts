@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 import Item from "./Item";
 import { PageKey } from "../types/SvelteKey";
-import { openPage } from "../store/store";
+import { currentPage } from "../store/store";
 
 export default class ComputerItem extends Item {
   computerPage!: PageKey;
@@ -29,7 +29,7 @@ export default class ComputerItem extends Item {
 
   setCurrentPage() {
     if (this.computerPage) {
-      openPage.set(this.computerPage);
+      currentPage.set(this.computerPage);
     }
   }
 }

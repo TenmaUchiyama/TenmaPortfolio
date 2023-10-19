@@ -5,7 +5,7 @@ import Background from "./components/BackgroundPage.svelte";
 import Home from "./components/HomePage.svelte";
 import { isMonitorOpen, openPage } from "./store/store";
 import { PageKey } from "./types/SvelteKey";
-import HobbyPage from "./components/HobbyPage.svelte";
+import HobbyPage from "./components/SkillPage.svelte";
 import HomePage from "./components/HomePage.svelte";
 
 
