@@ -3,7 +3,7 @@ import Monitor from "./components/Monitor.svelte";
 import Project from "./components/ProjectPage.svelte";
 import Background from "./components/BackgroundPage.svelte";
 import Home from "./components/HomePage.svelte";
-import { isMonitorOpen, openPage } from "./store/store";
+import { isMonitorOpen, currentPage } from "./store/store";
 import { PageKey } from "./types/SvelteKey";
 import HobbyPage from "./components/SkillPage.svelte";
 import HomePage from "./components/HomePage.svelte";
@@ -29,8 +29,8 @@ window.onkeydown = (e) => {
 </script>
 
 
-{#if $isMonitorOpen && $openPage !== PageKey.NONE}
+{#if $isMonitorOpen && $currentPage !== PageKey.NONE}
 <Monitor>
-   <svelte:component this={pages[$openPage]}/>
+   <svelte:component this={pages[$currentPage]}/>
 </Monitor>
 {/if}

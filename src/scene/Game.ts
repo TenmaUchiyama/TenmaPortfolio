@@ -9,7 +9,7 @@ import {
   FontKey,
 } from "../types/PhaserKey";
 import type { NavKeys } from "../types/NavKeys";
-import { isMonitorOpen } from "../store/store";
+import { isBgmOn, isMonitorOpen } from "../store/store";
 import PlayerSelector from "../character/PlayerSelector";
 import ComputerItem from "../item/ComputerItem";
 import type Item from "../item/Item";
@@ -94,7 +94,7 @@ export default class Game extends Phaser.Scene {
 
     computerLayer1!.objects.forEach((obj) => {
       const computer = this.addItem(computer1, obj) as ComputerItem;
-      console.log(obj.id - 1);
+
       computer.setComputerPage(PageKey.HOBBY);
     });
     const computer2 = this.physics.add.staticGroup({
@@ -128,11 +128,13 @@ export default class Game extends Phaser.Scene {
     const computer5 = this.physics.add.staticGroup({
       classType: ComputerItem,
     });
+
     const computerLayer5 = this.map.getObjectLayer(LayerKey.COMPUTER5_OBJLAYER);
 
     computerLayer5!.objects.forEach((obj) => {
       const computer = this.addItem(computer5, obj) as ComputerItem;
       computer.setComputerPage(PageKey.NONE);
+      computer.testMsg("BGM OFF");
     });
 
     this.addObjet(LayerKey.DECORATION_OBJLAYER, false);
@@ -147,8 +149,29 @@ export default class Game extends Phaser.Scene {
       this
     );
 
+    //test
     emitter.on(EventKey.SELECTED, (selectedItem: ComputerItem) => {
       this.removeOldObject(computer5, selectedItem);
+      selectedItem.clearNameBox();
+
+      console.log(computer5.getLength());
+
+      let bgm: boolean;
+
+      isBgmOn.subscribe((data: boolean) => {
+        bgm = data;
+      });
+
+      let id = bgm! ? 169 : 170;
+      AudioManager.playBGM(!bgm!);
+      console.log(id);
+      computerLayer5!.objects.forEach((obj) => {
+        const computer = this.testAddItem(computer5, obj, id) as ComputerItem;
+        computer.setComputerPage(PageKey.NONE);
+        computer.testMsg(`BGM ${bgm! ? "OFF" : "ON"}`);
+      });
+
+      isBgmOn.set(!bgm!);
     });
   }
 
@@ -185,6 +208,18 @@ export default class Game extends Phaser.Scene {
     const y = object.y! - object.height! * 0.5;
 
     const obj = group.get(x, y, MapKey.MAPIMG, object.gid! - 1).setDepth(y);
+    return obj;
+  }
+
+  private testAddItem(
+    group: Phaser.Physics.Arcade.StaticGroup,
+    object: Phaser.Types.Tilemaps.TiledObject,
+    id: number
+  ) {
+    const x = object.x! + object.width! * 0.5;
+    const y = object.y! - object.height! * 0.5;
+
+    const obj = group.get(x, y, MapKey.MAPIMG, id).setDepth(y);
     return obj;
   }
 

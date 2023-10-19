@@ -16,7 +16,6 @@ export default class Item extends Phaser.Physics.Arcade.Sprite {
 
     this.dialogBox = this.scene.add.container().setDepth(100000);
     this.nameBox = this.scene.add.container().setDepth(100000);
-    this.statusBox = this.scene.add.container().setDepth(100000);
   }
 
   setNameBox(text: string) {
@@ -83,5 +82,9 @@ export default class Item extends Phaser.Physics.Arcade.Sprite {
 
   clearDialogBox() {
     this.dialogBox.removeAll(true);
+  }
+
+  clearNameBox() {
+    this.nameBox.removeAll(true);
   }
 }

@@ -7,6 +7,8 @@ export default class AudioManager {
   static runSound: Phaser.Sound.BaseSound;
   static monitorSound: Phaser.Sound.BaseSound;
   static pcSound: Phaser.Sound.BaseSound;
+  static bgm: Phaser.Sound.BaseSound;
+  private static playedOnce: boolean = false;
 
   static setScene(scene: Phaser.Scene) {
     AudioManager.scene = scene;
@@ -14,9 +16,13 @@ export default class AudioManager {
     AudioManager.runSound = AudioManager.scene.sound.add(AudioKey.RUN, {
       loop: true,
     });
-
+    AudioManager.bgm = AudioManager.scene.sound.add(AudioKey.BGM, {
+      loop: true,
+    });
     AudioManager.monitorSound = AudioManager.scene.sound.add(AudioKey.MONTIOR);
     AudioManager.pcSound = AudioManager.scene.sound.add(AudioKey.PC);
+
+    (AudioManager.bgm as Phaser.Sound.WebAudioSound).setVolume(0.3);
 
     AudioManager.pcSound.addMarker({
       name: "initial",
@@ -78,6 +84,24 @@ export default class AudioManager {
           AudioManager.pcSound.stop();
         }
       );
+    }
+  }
+
+  static playBGM(play: boolean) {
+    if (!AudioManager.scene) {
+      console.error("This class is not instantiated");
+      return;
+    }
+
+    if (play) {
+      if (this.playedOnce) {
+        AudioManager.bgm.resume();
+        return;
+      }
+      AudioManager.bgm.play();
+      AudioManager.playedOnce = true;
+    } else {
+      if (this.playedOnce) AudioManager.bgm.pause();
     }
   }
 }

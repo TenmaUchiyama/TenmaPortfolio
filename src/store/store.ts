@@ -49,5 +49,4 @@ function monitorOpen() {
     },
   };
 }
-
 export const isMonitorOpen = monitorOpen();

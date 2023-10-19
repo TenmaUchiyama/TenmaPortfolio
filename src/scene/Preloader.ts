@@ -31,6 +31,7 @@ export default class Preloader extends Phaser.Scene {
       loop: false,
     });
     this.load.audio(AudioKey.PC, ["/audio/pc_on.mp3"]);
+    this.load.audio(AudioKey.BGM, ["/audio/bgm/bgm1.mp3"]);
 
     this.load.on("complete", () => {
       this.scene.start(SceneKey.GAME);

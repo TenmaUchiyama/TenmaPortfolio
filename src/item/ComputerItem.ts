@@ -32,4 +32,8 @@ export default class ComputerItem extends Item {
       currentPage.set(this.computerPage);
     }
   }
+
+  testMsg(text: string) {
+    this.setNameBox(text);
+  }
 }

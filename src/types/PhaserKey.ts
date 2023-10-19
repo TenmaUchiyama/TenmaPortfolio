@@ -18,6 +18,7 @@ export enum AudioKey {
   RUN = "run",
   MONTIOR = "monitor",
   PC = "pc",
+  BGM = "bgm",
 }
 
 export enum MapKey {
