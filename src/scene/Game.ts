@@ -24,6 +24,7 @@ export default class Game extends Phaser.Scene {
   private keySpace!: Phaser.Input.Keyboard.Key | undefined;
   private map!: Phaser.Tilemaps.Tilemap;
   private playerSelector!: PlayerSelector;
+  private dialogBox!: Phaser.GameObjects.Container;
 
   //temp
   //170 for on 169 for off
@@ -149,6 +150,9 @@ export default class Game extends Phaser.Scene {
       this
     );
 
+    this.dialogBox = this.add.container().setDepth(100000);
+    this.setDialogBox("W,S,A,D or \n arrow keys to move");
+
     //test
     emitter.on(EventKey.SELECTED, (selectedItem: ComputerItem) => {
       this.removeOldObject(computer5, selectedItem);
@@ -242,11 +246,51 @@ export default class Game extends Phaser.Scene {
     }
   }
 
-  private spaceKeyPressed = false;
   update(time: number, delta: number) {
     if (this.player) {
-      this.player.update(this.cursor, this.keySpace, this.playerSelector);
+      this.player.update(
+        this.cursor,
+        this.keySpace,
+        this.playerSelector,
+        this.dialogBox
+      );
       this.playerSelector.update(this.player, this.cursor!);
     }
+  }
+
+  setDialogBox(text: string) {
+    const innerText = this.add
+      .text(0, 0, text)
+      .setFontFamily("Arial")
+      .setFontSize(12)
+      .setColor("#000000");
+
+    // set dialogBox slightly larger than the text in it
+    const dialogBoxWidth = innerText.width + 4;
+    const dialogBoxHeight = innerText.height + 2;
+    const dialogBoxX = 50;
+    const dialogBoxY = 200;
+
+    this.dialogBox.add(
+      this.add
+        .graphics()
+        .fillStyle(0xffffff, 1)
+        .fillRoundedRect(
+          dialogBoxX,
+          dialogBoxY,
+          dialogBoxWidth,
+          dialogBoxHeight,
+          3
+        )
+        .lineStyle(1.5, 0x000000, 1)
+        .strokeRoundedRect(
+          dialogBoxX,
+          dialogBoxY,
+          dialogBoxWidth,
+          dialogBoxHeight,
+          3
+        )
+    );
+    this.dialogBox.add(innerText.setPosition(dialogBoxX + 2, dialogBoxY));
   }
 }

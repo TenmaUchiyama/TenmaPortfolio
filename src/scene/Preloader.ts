@@ -27,7 +27,7 @@ export default class Preloader extends Phaser.Scene {
     this.load.audio(AudioKey.RUN, ["/audio/run.ogg", "/audio/run.mp3"], {
       loop: true,
     });
-    this.load.audio(AudioKey.MONTIOR, ["/audio/monitor-sound1.mp3"], {
+    this.load.audio(AudioKey.MONTIOR, ["/audio/machine-button.mp3"], {
       loop: false,
     });
     this.load.audio(AudioKey.PC, ["/audio/pc_on.mp3"]);

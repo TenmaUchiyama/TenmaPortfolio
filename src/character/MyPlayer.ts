@@ -14,8 +14,7 @@ export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
   private isKeyPressedOnce: boolean = false;
 
   constructor(scene: Phaser.Scene, x: number, y: number, texture: string) {
-    super(scene, x, y, texture);
-
+    super(scene, x, y, texture);  
     //Display this sprite on the scene
     scene.add.existing(this);
 

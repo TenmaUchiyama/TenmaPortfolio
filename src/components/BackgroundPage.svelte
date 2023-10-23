@@ -1,19 +1,19 @@
 <script lang="ts">
 	import BackmanHighIcon from '/portfolio-media/Imgs/BeckmanHigh_Icon.jpg';
 	import ASBIcon from '/portfolio-media/Imgs/ASBIcon.jpg';
-	import NCUK from '/portfolio-media/Imgs/NCUKIcon.png';
+	import NCUK from '/portfolio-media/Imgs/NCUKIcon.jpg';
 	import UOMIcon from '/portfolio-media/Imgs/UOMIcon.jpg';
-	import KeioIcon from '/portfolio-media/Imgs/KeioIcon.png';
-	import IHI from '/portfolio-media/Imgs/IHI_Icon.png';
+	import KeioIcon from '/portfolio-media/Imgs/KeioIcon.jpg';
+	import IHI from '/portfolio-media/Imgs/IHI_Icon.jpg';
 	import Serio from '/portfolio-media/Imgs/serio.jpg';
-	import Live2d from '/portfolio-media/Imgs/Live2d.png';
+	import Live2d from '/portfolio-media/Imgs/Live2d.jpg';
 
-	import degree from '/portfolio-media/Icon/degree.png';
-	import calendar from '/portfolio-media/Icon/calendar.png';
-	import location from '/portfolio-media/Icon/location.png';
-	import education from '/portfolio-media/Icon/education.png';
-	import career from '/portfolio-media/Icon/career.png';
-	import bag from '/portfolio-media/Icon/briefcase.png';
+	import degree from '/portfolio-media/Icon/degree.jpg';
+	import calendar from '/portfolio-media/Icon/calendar.jpg';
+	import location from '/portfolio-media/Icon/location.jpg';
+	import education from '/portfolio-media/Icon/education.jpg';
+	import career from '/portfolio-media/Icon/career.jpg';
+	import bag from '/portfolio-media/Icon/briefcase.jpg';
 	import { displayLanguage } from '../store/store';
 
 	interface IEducation {

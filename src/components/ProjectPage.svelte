@@ -1,8 +1,8 @@
 <script lang="ts">
 	import PuzzleBot from '/portfolio-media/ProjectImg/Puzzlebot.jpg';
-	import MusicPlayer from '/portfolio-media/ProjectImg/GestureMusicPlayer.png';
-	import SoftDrink from '/portfolio-media/ProjectImg/SoftDrinkServer.png';
-	import MRProject from '/portfolio-media/ProjectImg/MRProject.png';
+	import MusicPlayer from '/portfolio-media/ProjectImg/GestureMusicPlayer.jpg';
+	import SoftDrink from '/portfolio-media/ProjectImg/SoftDrinkServer.jpg';
+	import MRProject from '/portfolio-media/ProjectImg/MRProject.jpg';
 	import { displayLanguage } from '../store/store';
 
 	
@@ -153,7 +153,9 @@
 	{#each projects as prj}
 	<div class="card" style="width: 16rem; margin:20px;" >
 		<!-- svelte-ignore a11y-missing-attribute -->
-		<img src={prj.img} class="card-img-top img-fluid" style="height: 300px;">
+			<img src={prj.img} class="card-img-top img-fluid" style="height: 25%;">
+
+		
 		<div class="card-body" style="height:auto;">
 		  <h5 class="card-title">{prj.title[$displayLanguage]}</h5>
 		  <p class="card-text">{prj.description[$displayLanguage]}</p>

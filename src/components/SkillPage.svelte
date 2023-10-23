@@ -1,9 +1,9 @@
 
 <script lang='ts'>
-import Lang from '/portfolio-media/Icon/language.png'
-import Prog from '/portfolio-media/Icon/programming.png'
-import Ja from '/portfolio-media/Icon/japan.png'
-import En from '/portfolio-media/Icon/english.png'
+import Lang from '/portfolio-media/Icon/language.jpg'
+import Prog from '/portfolio-media/Icon/programming.jpg'
+import Ja from '/portfolio-media/Icon/japan.jpg'
+import En from '/portfolio-media/Icon/english.jpg'
 import { displayLanguage } from '../store/store';
 
 
