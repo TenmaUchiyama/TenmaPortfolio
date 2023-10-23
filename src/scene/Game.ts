@@ -9,7 +9,7 @@ import {
   FontKey,
 } from "../types/PhaserKey";
 import type { NavKeys } from "../types/NavKeys";
-import { isBgmOn, isMonitorOpen } from "../store/store";
+import { isBgmOn, isDesktop, isMonitorOpen } from "../store/store";
 import PlayerSelector from "../character/PlayerSelector";
 import ComputerItem from "../item/ComputerItem";
 import type Item from "../item/Item";
@@ -18,18 +18,23 @@ import AudioManager from "../audio/Audio";
 import { EventKey, emitter } from "../event/PhaserEvent";
 
 export default class Game extends Phaser.Scene {
-  private MAPSCALE: number = 2;
+  private MAPSCALE!: number;
   private cursor!: NavKeys | undefined;
   private player!: any;
   private keySpace!: Phaser.Input.Keyboard.Key | undefined;
   private map!: Phaser.Tilemaps.Tilemap;
   private playerSelector!: PlayerSelector;
+  private isDesktop!: boolean;
 
   //temp
   //170 for on 169 for off
 
   constructor() {
     super(SceneKey.GAME);
+    isDesktop.subscribe((isDesk) => {
+      this.isDesktop = isDesk;
+      this.MAPSCALE = isDesk ? 2 : 1.5;
+    });
   }
 
   preload() {}
@@ -48,6 +53,7 @@ export default class Game extends Phaser.Scene {
       font: "3rem Poppins semibold",
       color: "orange",
     });
+
     this.enableKeys();
     this.cursor = {
       ...this.input.keyboard!.createCursorKeys(),
@@ -60,7 +66,7 @@ export default class Game extends Phaser.Scene {
     AudioManager.setScene(this);
 
     createCharacterAnims(this.anims);
-    this.player = this.add.myPlayer(300, 300, CharacterKey.STICKMAN);
+    this.player = this.add.myPlayer(460, 350, CharacterKey.STICKMAN);
     this.playerSelector = new PlayerSelector(this, 0, 0, 16, 16);
 
     this.cameras.main.zoom = this.MAPSCALE;
@@ -150,11 +156,9 @@ export default class Game extends Phaser.Scene {
     );
 
     //test
-    emitter.on(EventKey.SELECTED, (selectedItem: ComputerItem) => {
+    emitter.on(EventKey.SELECTED_ITEM, (selectedItem: ComputerItem) => {
       this.removeOldObject(computer5, selectedItem);
       selectedItem.clearNameBox();
-
-      console.log(computer5.getLength());
 
       let bgm: boolean;
 
@@ -164,7 +168,6 @@ export default class Game extends Phaser.Scene {
 
       let id = bgm! ? 169 : 170;
       AudioManager.playBGM(!bgm!);
-      console.log(id);
       computerLayer5!.objects.forEach((obj) => {
         const computer = this.testAddItem(computer5, obj, id) as ComputerItem;
         computer.setComputerPage(PageKey.NONE);

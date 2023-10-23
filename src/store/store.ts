@@ -4,7 +4,11 @@ import Game from "../scene/Game";
 import phaserGame from "../PhaserGame";
 import AudioManager from "../audio/Audio";
 
-// export const isMonitorOpen = writable<boolean>(false);
+export const isDesktop = writable<boolean>(true);
+
+export const isOnLoading = writable<boolean>(true);
+
+export const loadingProgress = writable<number>(0);
 
 export const displayLanguage = writable<string>("ja");
 
@@ -13,7 +17,7 @@ export const currentPage = writable<PageKey>(PageKey.NONE);
 export const isBgmOn = writable<boolean>(false);
 
 function monitorOpen() {
-  const { subscribe, set, update } = writable<boolean>(true);
+  const { subscribe, set, update } = writable<boolean>(false);
 
   return {
     subscribe,
