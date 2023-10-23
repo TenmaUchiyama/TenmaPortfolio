@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { joystickInitData, type IJoystickData } from "../types/IJoystickData";
 	import { EventKey, emitter } from "../event/PhaserEvent";
-  	import { isMonitorOpen } from "../store/store";
+  	import { isMonitorOpen, isOnLoading } from "../store/store";
 
 	const btnRadius = window.innerWidth *0.07
 	const baseRadius = window.innerWidth * 0.09;
@@ -153,7 +153,7 @@ emitter.emit(EventKey.JOYSTICK, joystickData)
 </script>
 
 
-{#if $isMonitorOpen === false}
+{#if $isMonitorOpen === false && $isOnLoading === false}
 <svg
 	id="joystick"
 	use:joysctickComponent
@@ -177,10 +177,7 @@ height={baseRadius * 3}
 	<circle id="btn" r={btnRadius} />
 </svg>
 
-{:else}
-<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 64 64">
-	<path d="M 17.84375 11.201172 A 1.0001 1.0001 0 0 0 17.150391 11.494141 L 11.494141 17.150391 A 1.0001 1.0001 0 0 0 11.494141 18.564453 L 24.929688 32 L 11.494141 45.435547 A 1.0001 1.0001 0 0 0 11.494141 46.849609 L 17.150391 52.505859 A 1.0001 1.0001 0 0 0 18.564453 52.505859 L 32 39.070312 L 45.435547 52.505859 A 1.0001 1.0001 0 0 0 46.849609 52.505859 L 52.505859 46.849609 A 1.0001 1.0001 0 0 0 52.505859 45.435547 L 39.070312 32 L 52.505859 18.564453 A 1.0001 1.0001 0 0 0 52.505859 17.150391 L 46.849609 11.494141 A 1.0001 1.0001 0 0 0 45.435547 11.494141 L 32 24.929688 L 23.832031 16.761719 A 1.0001 1.0001 0 1 0 22.417969 18.175781 L 31.292969 27.050781 A 1.0001 1.0001 0 0 0 32.707031 27.050781 L 46.142578 13.615234 L 50.384766 17.857422 L 36.949219 31.292969 A 1.0001 1.0001 0 0 0 36.949219 32.707031 L 50.384766 46.142578 L 46.142578 50.384766 L 32.707031 36.949219 A 1.0001 1.0001 0 0 0 31.292969 36.949219 L 17.857422 50.384766 L 13.615234 46.142578 L 27.050781 32.707031 A 1.0001 1.0001 0 0 0 27.050781 31.292969 L 13.615234 17.857422 L 17.857422 13.615234 L 19.042969 14.800781 A 1.0001 1.0001 0 1 0 20.457031 13.386719 L 18.564453 11.494141 A 1.0001 1.0001 0 0 0 17.84375 11.201172 z"></path>
-	</svg>
+
 {/if}
 
 <style>
