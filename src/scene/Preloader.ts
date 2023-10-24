@@ -6,6 +6,7 @@ import {
   MapKey,
   SceneKey,
 } from "../types/PhaserKey";
+import { isOnLoading, loadingProgress } from "../store/store";
 
 export default class Preloader extends Phaser.Scene {
   constructor() {
@@ -33,8 +34,14 @@ export default class Preloader extends Phaser.Scene {
     this.load.audio(AudioKey.PC, ["/audio/pc_on.mp3"]);
     this.load.audio(AudioKey.BGM, ["/audio/bgm/bgm1.mp3"]);
 
+    this.load.on("progress", (value: number) => {
+      const progress = Math.floor(value * 100);
+      loadingProgress.set(progress);
+    });
+
     this.load.on("complete", () => {
       this.scene.start(SceneKey.GAME);
+      isOnLoading.set(false);
     });
   }
 }

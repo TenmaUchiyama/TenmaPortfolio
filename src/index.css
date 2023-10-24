@@ -5,13 +5,13 @@ body {
 }
 
 #app {
-  position: relative; /* 要素の相対的な位置を指定 */
+  position: relative;
   top: 0;
   left: 0;
 }
 
 #phaser-container {
-  position: absolute; /* 要素の絶対的な位置を指定 */
+  position: absolute;
   top: 0;
   left: 0;
   z-index: -1;

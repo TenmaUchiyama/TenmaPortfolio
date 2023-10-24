@@ -7,11 +7,14 @@ import { isMonitorOpen, currentPage } from "../store/store";
 import { PageKey } from "../types/SvelteKey";
 import AudioManager from "../audio/Audio";
 import { EventKey, emitter } from "../event/PhaserEvent";
+import { joystickInitData, type IJoystickData } from "../types/IJoystickData";
 
 export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
   private PLAYER_VELOCITY: number = 200;
   private isMovable: boolean = true;
   private isKeyPressedOnce: boolean = false;
+  private joystickData: IJoystickData;
+  private virtualButtonDown: boolean;
 
   constructor(scene: Phaser.Scene, x: number, y: number, texture: string) {
     super(scene, x, y, texture);  
@@ -30,6 +33,19 @@ export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
         this.anims.play(AnimationKey.IDLE);
       }
     });
+
+    this.joystickData = joystickInitData;
+    this.virtualButtonDown = false;
+
+    emitter.on(EventKey.JOYSTICK, (joystickData: IJoystickData) => {
+      this.joystickData = joystickData;
+    });
+
+    emitter.on(EventKey.SELECT_BTN, (btnState: boolean) => {
+      if (this.virtualButtonDown && this.isKeyPressedOnce) {
+        this.virtualButtonDown = btnState;
+      }
+    });
   }
 
   update(
@@ -42,16 +58,16 @@ export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
 
     if (this.anims.currentAnim!.key === AnimationKey.DEATH) return;
 
-    if (cursors.A.isDown || cursors.left.isDown) {
+    if (cursors.A.isDown || cursors.left.isDown || this.joystickData.left) {
       dx -= this.PLAYER_VELOCITY;
     }
-    if (cursors.D.isDown || cursors.right.isDown) {
+    if (cursors.D.isDown || cursors.right.isDown || this.joystickData.right) {
       dx += this.PLAYER_VELOCITY;
     }
-    if (cursors.S.isDown || cursors.down.isDown) {
+    if (cursors.S.isDown || cursors.down.isDown || this.joystickData.down) {
       dy += this.PLAYER_VELOCITY;
     }
-    if (cursors.W.isDown || cursors.up.isDown) {
+    if (cursors.W.isDown || cursors.up.isDown || this.joystickData.up) {
       dy -= this.PLAYER_VELOCITY;
     }
 
@@ -69,13 +85,14 @@ export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
       }
     }
 
-    if (keySpace.isDown && !this.isKeyPressedOnce) {
+    if ((keySpace.isDown || this.virtualButtonDown) && !this.isKeyPressedOnce) {
+      console.log("pased");
       this.isKeyPressedOnce = true;
       const selectedItem = playerSelector.selectedItem;
       if (!selectedItem) return;
       if (selectedItem instanceof ComputerItem) {
         if (selectedItem.computerPage === PageKey.NONE) {
-          emitter.emit(EventKey.SELECTED, selectedItem);
+          emitter.emit(EventKey.SELECTED_ITEM, selectedItem);
           return;
         }
 
