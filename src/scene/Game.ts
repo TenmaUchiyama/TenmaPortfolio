@@ -155,9 +155,10 @@ export default class Game extends Phaser.Scene {
       this
     );
 
-    this.dialogBox = this.add.container().setDepth(100000);
-    this.setDialogBox("W,S,A,D or \n arrow keys to move");
-
+    if (this.isDesktop) {
+      this.dialogBox = this.add.container().setDepth(100000);
+      this.setDialogBox("W,S,A,D or \n arrow keys to move");
+    }
     //test
     emitter.on(EventKey.SELECTED_ITEM, (selectedItem: ComputerItem) => {
       this.removeOldObject(computer5, selectedItem);

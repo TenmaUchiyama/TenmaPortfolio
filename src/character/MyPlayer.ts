@@ -17,7 +17,7 @@ export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
   private virtualButtonDown: boolean;
 
   constructor(scene: Phaser.Scene, x: number, y: number, texture: string) {
-    super(scene, x, y, texture);  
+    super(scene, x, y, texture);
     //Display this sprite on the scene
     scene.add.existing(this);
 
@@ -42,9 +42,8 @@ export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
     });
 
     emitter.on(EventKey.SELECT_BTN, (btnState: boolean) => {
-      if (this.virtualButtonDown && this.isKeyPressedOnce) {
-        this.virtualButtonDown = btnState;
-      }
+      this.virtualButtonDown = true;
+      this.isKeyPressedOnce = false;
     });
   }
 
@@ -85,9 +84,12 @@ export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
       }
     }
 
-    if ((keySpace.isDown || this.virtualButtonDown) && !this.isKeyPressedOnce) {
-      console.log("pased");
+    if (
+      (Phaser.Input.Keyboard.JustDown(keySpace) || this.virtualButtonDown) &&
+      !this.isKeyPressedOnce
+    ) {
       this.isKeyPressedOnce = true;
+      this.virtualButtonDown = false;
       const selectedItem = playerSelector.selectedItem;
       if (!selectedItem) return;
       if (selectedItem instanceof ComputerItem) {
@@ -102,7 +104,7 @@ export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
       isMonitorOpen.openPage();
     }
 
-    if (keySpace.isUp) {
+    if (Phaser.Input.Keyboard.JustUp(keySpace)) {
       this.isKeyPressedOnce = false;
     }
 

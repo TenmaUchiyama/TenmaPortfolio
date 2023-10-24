@@ -26,6 +26,7 @@ let regexp = /android|iphone|kindle|ipad/i;
 /* Using test() method to search regexp in details 
   it returns boolean value*/
 isDesktopDevice = !regexp.test(details);
+
 isDesktop.set(isDesktopDevice)
 })
 
@@ -38,17 +39,10 @@ const pages = {
    [PageKey.HOBBY] : HobbyPage
 }
 
-window.onkeydown = (e) => {
-   if(e.code ===  "Space"){
-   if($isMonitorOpen)
-   {
-      isMonitorOpen.closePage()
-   }
-}
-}
 
 
 </script>
+
 
 
 <!-- svelte-ignore empty-block -->
@@ -76,7 +70,9 @@ window.onkeydown = (e) => {
 {/if}
 
 
+{#if !isDesktopDevice}
 <Joystick/>
+{/if}
 <style>
    .loading{
       position: relative;

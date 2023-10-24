@@ -133,18 +133,18 @@ emitter.emit(EventKey.JOYSTICK, joystickData)
 		
 			if(isBtnPressedOnce) return
 			isBtnPressedOnce = true
+			
 			emitter.emit(EventKey.SELECT_BTN, true)
 			button.style.fill = "rgba(140,140,140,0.8)";
 			
-			console.log("押された")
+
 		}
 
 		button.ontouchend = (event:TouchEvent) => {
 			if(!isBtnPressedOnce) return
 			isBtnPressedOnce = false
-			emitter.emit(EventKey.SELECT_BTN, false)
 			button.style.fill = "rgba(100,100,100,0.6)";
-			console.log("押されなかった")
+		
 
 		}
 

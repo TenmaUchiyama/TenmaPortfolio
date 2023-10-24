@@ -20,12 +20,18 @@
     }
 
 
+    const onSpaceKeyPressed = (event : KeyboardEvent) => {
+   if(event.code ===  "Space"){
+      isMonitorOpen.closePage()
+}
+}
 
     
     </script>
     
     
-    <svelte:window on:wheel={onwheel}></svelte:window>
+    <svelte:window on:wheel={onwheel} on:keydown={onSpaceKeyPressed}></svelte:window>
+   
 
 
 
