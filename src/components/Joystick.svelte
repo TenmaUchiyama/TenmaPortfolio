@@ -3,18 +3,11 @@
 	import { EventKey, emitter } from "../event/PhaserEvent";
   	import { isMonitorOpen, isOnLoading } from "../store/store";
 
-	const btnRadius = window.innerWidth *0.07
-	const baseRadius = window.innerWidth * 0.09;
+	const btnRadius = window.innerWidth *0.15
+	const baseRadius = window.innerWidth * 0.2;
 	const thumbRadius = baseRadius / 3;
 	const maxRadius = baseRadius - thumbRadius;
 
-	let centerX : number;
-	let centerY : number;
-
-	let isDragging = false;
-
-	let base: SVGSVGElement;
-	let thumb: SVGSVGElement;
 
 
 

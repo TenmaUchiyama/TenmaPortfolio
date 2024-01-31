@@ -11,9 +11,14 @@ export const content = {
   },
 
   "home-content-job": {
-    ja: "役職：フリーランスエンジニア",
-    en: "Position: Freelance Engineer",
-    th: "ตำแหน่ง: วิศวกรฟรีแลนซ์",
+    ja: "役職：学生",
+    en: "Position: Student",
+    th: "ตำแหน่ง: นักเรียน",
+  },
+  "home-content-school": {
+    ja: "所属：修士１年　慶応義塾大学開放環境科学専攻情報工学科",
+    en: "Affiliation: 1st in MSc Computer Science at Keio University",
+    th: "สังกัด: นิสิตปริญญาโทชั้นปีที่ 1 Keio มหาวิทยาลัย",
   },
   "home-content-ambition": {
     ja: "目標： 私の夢は、街を歩けば、多くの人々がウェアラブル機器を身につけ、それを活用してより快適な生活を送っている光景を見ることです。",

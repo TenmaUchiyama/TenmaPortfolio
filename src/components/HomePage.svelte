@@ -17,6 +17,7 @@
 				<p id="name" class="name">{content['home-content-name'][$displayLanguage]}</p>
 				<p id="birthday">{content['home-content-birthdate'][$displayLanguage]}</p>
 				<p id="position">{content['home-content-job'][$displayLanguage]}</p>
+				<p id="school">{content['home-content-school'][$displayLanguage]}</p>
 				<p id="ambition">{content['home-content-ambition'][$displayLanguage]}</p>
 			</div>
 		</div>
@@ -38,7 +39,7 @@
 
 	#name {
 		font-weight: bold;
-		font-size: 4rem;
+		font-size: 3rem;
 	}
 
 	.profile .content {
