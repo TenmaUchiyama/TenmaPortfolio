@@ -7,6 +7,7 @@
 
 	
 	interface IProject {
+		videoContain: string, 
 		img: string;
 		title: {
 			[lang:string ]:string
@@ -23,6 +24,7 @@
 
 	const projects: IProject[] = [
 		{
+			videoContain: "", 
 			img: PuzzleBot,
 			title:{
 				en : 'Line-Following Buggy',
@@ -53,6 +55,7 @@
 			},]
 		},
 		{
+			videoContain: "", 
 			img: MusicPlayer,
 			title: {
 				en : 'Gesture Music Player',
@@ -83,6 +86,7 @@
 			}]
 		},
 		{
+			videoContain: "https://www.youtube.com/watch?v=5IK4271wVHI", 
 			img: SoftDrink,
 			title: {
 				en : 'Voice-Controlled Soft Drink Server',
@@ -113,6 +117,7 @@
 			}]
 		},
 		{
+			videoContain: "", 
 			img: MRProject,
 			title: {
 				en : 'MR Based E-bike Diagnosis Application',
@@ -153,8 +158,12 @@
 	{#each projects as prj}
 	<div class="card" style="width: 16rem; margin:20px;" >
 		<!-- svelte-ignore a11y-missing-attribute -->
+		{#if prj.videoContain === ""}
 			<img src={prj.img} class="card-img-top img-fluid" style="height: 25%;">
-
+		{:else}
+		<iframe height="25%" src="https://www.youtube.com/embed/5IK4271wVHI?si=CnLBXgc1pbZiCg79" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		{/if}
+		
 		
 		<div class="card-body" style="height:auto;">
 		  <h5 class="card-title">{prj.title[$displayLanguage]}</h5>
