@@ -4,7 +4,7 @@
 
 </script>
 
-<nav class="navbar ">
+<nav class="navbar" style="padding-left: 10px; padding-right: 10px;">
 	<div class="logo">
 		<img src={logo} alt="">
 		<h1>Tenma</h1>
@@ -37,4 +37,20 @@
 		font-size: 2rem;
 	}
 
+
+
+	@media (max-width: 414px) {
+		.logo {
+		text-decoration: none;
+		color: black;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 5px;
+		font-size: 2rem;
+	}
+		img{
+			max-width: 3rem;
+		}
+	}
 </style>

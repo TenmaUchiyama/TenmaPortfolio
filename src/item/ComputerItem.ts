@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 import Item from "./Item";
 import { PageKey } from "../types/SvelteKey";
-import { currentPage } from "../store/store";
+import { currentPage, isDesktop } from "../store/store";
 
 export default class ComputerItem extends Item {
   computerPage!: PageKey;
@@ -23,7 +23,11 @@ export default class ComputerItem extends Item {
 
   onOverlapDialog() {
     if (this.computerPage && this.computerPage !== PageKey.NONE) {
-      this.setDialogBox("Press Space to view " + this.computerPage);
+      let indicator = "Space";
+      isDesktop.subscribe((isDesktop) => {
+        if (!isDesktop) indicator = "Button";
+      });
+      this.setDialogBox(`Press ${indicator} to view ` + this.computerPage);
     }
   }
 

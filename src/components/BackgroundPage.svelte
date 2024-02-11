@@ -14,7 +14,7 @@
 	import education from '/portfolio-media/Icon/education.jpg';
 	import career from '/portfolio-media/Icon/career.jpg';
 	import bag from '/portfolio-media/Icon/briefcase.jpg';
-	import { displayLanguage } from '../store/store';
+	import { displayLanguage, isDesktop } from '../store/store';
 
 	interface IEducation {
 		icon: string;
@@ -126,12 +126,19 @@
 	}
 </script>
 
-<h1 style="font-size: 4rem; margin-bottom: 50px;"> <img src={career} style='max-width:5rem; margin-right: 10px'>{titles.career[$displayLanguage]}</h1>
+
+{#if $isDesktop}
+<!-- style="font-size: 4rem; margin-bottom: 50px;"
+style='max-width:5rem; margin-right: 10px' -->
+<h1 class='category' > <img src={career} >{titles.career[$displayLanguage]}</h1>
+
+
+
 {#each careers as career}
-<div class="educationItem">
+<div class="item career">
 	<img src={career.icon} alt="">
 	<div class="content">
-		<h1>{career.title}</h1>
+		<h1 class='title'>{career.title}</h1>
 		<p><img class='icon' src={bag} alt=""><b>{career.position}</b></p>
 		<p><img class='icon' src={calendar} alt="">{career.year}</p>
 		<!-- <ul class="list-group">
@@ -146,54 +153,154 @@
 <br>
 <br>
 <br>
-<h1 style="font-size: 4rem; margin-bottom: 50px;"> <img src={education} style='max-width:5rem; margin-right: 10px'>{titles.education[$displayLanguage]}</h1>
+<h1 class='category' > <img src={education} >{titles.education[$displayLanguage]}</h1>
 {#each educations as education}
-<div class="educationItem">
+<div class="item education">
 	<img src={education.icon} alt="">
 	<div class="content">
-		<h1>{education.title}</h1>
-		<p><img class='icon' src={degree} alt=""><b>{education.degree}</b></p>
-		<p><img class='icon' src={calendar} alt="">{education.year}</p>
-		<p><img class='icon' src={location} alt="">{education.location}</p>
+		<h1 class='title'>{education.title}</h1>
+		<p class='sub'><img class='icon' src={degree} alt=""><b>{education.degree}</b></p>
+		<p class='sub'><img class='icon' src={calendar} alt="">{education.year}</p>
+		<p class='sub'><img class='icon' src={location} alt="">{education.location}</p>
 	</div>
 	
 </div>
 {/each}
 
+{:else}
+
+
+<h1 class='category-vert' > <img src={career} >{titles.career[$displayLanguage]}</h1>
+<div class="card-wrapper">
+{#each careers as career}
+<div class="card" >
+	<img src={career.icon} class="card-img-top" alt="...">
+	<div class="card-body">
+	  <h5 class="card-title">{career.title}</h5>
+	</div>
+	<ul class="list-group list-group-flush">
+	  <li class="list-group-item"><img class='card-icon' src={bag} alt=""><b>{career.position}</b></li>
+	  <li class="list-group-item"><img class='card-icon' src={calendar} alt="">{career.year}</li>
+	 
+	</ul>
+	
+  </div>
+{/each}
+</div>
+
+<br>
+<br>
+<br>
+<h1 class='category-vert' > <img src={education} >{titles.education[$displayLanguage]}</h1>
+<div class="card-wrapper">
+{#each educations as education}
+
+	<div class="card" >
+		<img src={education.icon} class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 class="card-title">{education.title}</h5>
+		</div>
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item"><img class='card-icon' src={degree} alt=""><b>{education.degree}</b></li>
+		  <li class="list-group-item"><img class='card-icon' src={calendar} alt="">{education.year}</li>
+		  <li class="list-group-item"><img class='card-icon' src={location} alt="">{education.location}</li>
+		 
+		</ul>
+		
+	  </div>
+
+
+{/each}
+
+</div>
+{/if}
 
 <style>
-.educationItem {
-    width: 100%;
-	height: 40%;
+
+.category img{
+	max-width: 5vw;
+}
+.category {
+	font-size: 3vw;
+	display: flex;
+	align-items: center;
+
+}
+/* ループ内の各教育項目のスタイル */
+.item {
+	height: 25vh;
     border-radius: 5px;
     border-style: solid;
 	border-width: 1px;
     box-shadow: 14px 14px 30px rgba(0, 0, 0, 0.1);
 	display: flex;
 	align-items: center;
-	/* justify-content: space-evenly; */
-	margin-bottom: 60px ;
+	margin-top: 9vh;
 	gap: 10%;
+	padding: 9%;
+}
+
+.card {
+	box-shadow: 14px 14px 30px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+  max-width: 20%;
+
 }
 
 
-.content{
-	width: 100% ;
+
+.title {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.icon {
+  width: 5%;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.card-icon {
+  width: 8%;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 
-.content p 
+.category-vert{
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	gap: 5%;
+}
+.category-vert img{
+	max-width: 10%;
+}
+
+
+.card {
+	width: 30vw;
+	margin: 10px;
+}
+
+.card-wrapper
 {
-	gap: 10px;
-}
-.educationItem img {
-	width: 15%;
-	margin-left: 10%;
+		display: flex;
+		flex-wrap: wrap;
+
 }
 
-.icon{
-	max-width: 4%;
-	margin-right: 10px;
+.card-img-top 
+{
+	padding : 5%;
+}
+
+@media (max-width: 700px) {
+	.card {
+		width: 100%;
+	}
+
 }
 
 

@@ -8,11 +8,11 @@
 </script>
 
 <main class="container profile">
-	<div class="row align-items-center" >
+	<div class="row align-items-center main-content" >
 		<div class="col-md-6">
 			<img src={face} alt="Your Face" class="img-thumbnail"  style="max-width: 80%;"/>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6" style="display: flex; justify-content: center;">
 			<div class="content">
 				<p id="name" class="name">{content['home-content-name'][$displayLanguage]}</p>
 				<p id="birthday">{content['home-content-birthdate'][$displayLanguage]}</p>
@@ -38,7 +38,7 @@
 
 	#name {
 		font-weight: bold;
-		font-size: 4rem;
+		font-size: 2rem;
 	}
 
 	.profile .content {
@@ -49,4 +49,21 @@
 		background-color: #ededed;
 		padding: 5%;
 	}
+	.main-content{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (max-width: 414px) {
+	#name {
+		font-size: 9vw;
+	}
+
+}
+
+
+
+	
 </style>
