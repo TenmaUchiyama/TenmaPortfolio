@@ -3,7 +3,7 @@
 	import MusicPlayer from '/portfolio-media/ProjectImg/GestureMusicPlayer.jpg';
 	import SoftDrink from '/portfolio-media/ProjectImg/SoftDrinkServer.jpg';
 	import MRProject from '/portfolio-media/ProjectImg/MRProject.jpg';
-	import { displayLanguage } from '../store/store';
+	import { displayLanguage } from '@/store/store';
 
 	
 	interface IProject {

@@ -1,0 +1,77 @@
+{
+  "educations": [
+    {
+      "title": "Arnold. O. Beckman High School",
+      "degree": "High School",
+      "location": "Irvine CA, USA",
+      "year": "2014-2016",
+      "iconID": "beckmanImg"
+    },
+    {
+      "title": "The American School of Bangkok",
+      "degree": "High School",
+      "location": "Bangkok,Thailand",
+      "year": "2016-2018",
+      "iconID": "asbImg"
+    },
+    {
+      "title": "NCUK Thailand",
+      "degree": "Foundation year",
+      "location": "Bangkok, Thailand",
+      "year": "2018-2019",
+      "iconID": "ncukImg"
+    },
+    {
+      "title": "The University of Manchester",
+      "degree": "BEng in Electrical and Electronic Engineering",
+      "location": "Mancheser, UK",
+      "year": "2019-2022",
+      "iconID": "uomImg"
+    },
+    {
+      "title": "Keio University",
+      "degree": "MSc in Computer Science",
+      "location": "Kanagawa, Japan",
+      "year": "2023~",
+      "iconID": "keioImg"
+    }
+  ],
+
+  "careers": [
+    {
+      "title": "IHI Power System (Thailand) Co., Ltd.",
+      "position": "Buisiness and Engineering Intern",
+      "location": "Bangkok, Thailand",
+      "year": "July 2021 - Sep 2021",
+      "contents": [
+        "Create educational materials for new employees.",
+        "Create a Python application aimed at optimizing my supervisor's weekly tasks, thereby achieving a twofold increase in efficiency.",
+        "Acquire a comprehensive understanding of the LM6000 gas turbine's structure and the maintenance workflow in its operational context."
+      ],
+      "iconID": "ihiImg"
+    },
+    {
+      "title": "Serio.Inc",
+      "position": "Intern Teaching Assistant Part-Time",
+      "location": "Okayama, Japan",
+      "year": "June 2023 - Sep 2023",
+      "contents": [
+        "Create educational materials for new employees.",
+        "Create a Python application aimed at optimizing my supervisor's weekly tasks, thereby achieving a twofold increase in efficiency.",
+        "Acquire a comprehensive understanding of the LM6000 gas turbine's structure and the maintenance workflow in its operational context."
+      ],
+      "iconID": "serioImg"
+    },
+    {
+      "title": "Live2D Inc.",
+      "position": "Development Part-Time",
+      "location": "Tokyo, Japan",
+      "year": "June 2023 ~ ",
+      "contents": [
+        "Develop Web aplications for prototype",
+        "evelopment of prototype applications for internal use"
+      ],
+      "iconID": "live2dImg"
+    }
+  ]
+}

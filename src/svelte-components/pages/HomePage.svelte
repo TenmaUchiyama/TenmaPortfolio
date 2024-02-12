@@ -2,8 +2,8 @@
 	// @ts-nocheck
 
 	import face from '/portfolio-media/profile-pic.jpg';
-	import { displayLanguage } from '../store/store';
-	import { content } from '../utils/ContentData';
+	import { displayLanguage } from '@/store/store';
+	import { content } from '@/utils/ContentData';
 
 </script>
 

@@ -1,14 +1,13 @@
 <script lang='ts'>
-import Monitor from "./components/Monitor.svelte";
-import Project from "./components/ProjectPage.svelte";
-import Background from "./components/BackgroundPage.svelte";
-import HobbyPage from "./components/SkillPage.svelte";
-import HomePage from "./components/HomePage.svelte";
+import Monitor from "@svelte/Monitor.svelte";
+import Project from "@svelte/pages/ProjectPage.svelte";
+import Background from "@svelte/pages/BackgroundPage.svelte";
+import HobbyPage from "@svelte/pages/SkillPage.svelte";
+import HomePage from "@svelte/pages/HomePage.svelte";
 import { isMonitorOpen, currentPage , isOnLoading, loadingProgress, isDesktop} from "./store/store";
 import { PageKey } from "./types/SvelteKey"
 import { onMount } from "svelte";
-import Joystick from "./components/Joystick.svelte";
-
+import Joystick from "@svelte/Joystick.svelte";
 
 
 
@@ -64,15 +63,20 @@ const pages = {
 {/if}
 
 {#if $isMonitorOpen && $currentPage !== PageKey.NONE}
+{#if isDesktopDevice}
 <Monitor>
    <svelte:component this={pages[$currentPage]}/>
 </Monitor>
+{:else}
+{/if}
 {/if}
 
 
 {#if !isDesktopDevice}
 <Joystick/>
 {/if}
+
+
 <style>
    .loading{
       position: relative;

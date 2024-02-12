@@ -5,8 +5,8 @@ import {
   FontKey,
   MapKey,
   SceneKey,
-} from "../types/PhaserKey";
-import { isOnLoading, loadingProgress } from "../store/store";
+} from "../../types/PhaserKey";
+import { isOnLoading, loadingProgress } from "../../store/store";
 
 export default class Preloader extends Phaser.Scene {
   constructor() {

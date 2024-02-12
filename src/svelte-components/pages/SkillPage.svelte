@@ -4,7 +4,7 @@ import Lang from '/portfolio-media/Icon/language.jpg'
 import Prog from '/portfolio-media/Icon/programming.jpg'
 import Ja from '/portfolio-media/Icon/japan.jpg'
 import En from '/portfolio-media/Icon/english.jpg'
-import { displayLanguage } from '../store/store';
+import { displayLanguage } from '@/store/store';
 
 
     const skills =[ 

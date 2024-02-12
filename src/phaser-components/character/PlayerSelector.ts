@@ -1,10 +1,13 @@
 import Phaser from "phaser";
 import type MyPlayer from "./MyPlayer";
-import type { NavKeys } from "../types/NavKeys";
+import type { NavKeys } from "../../types/NavKeys";
 import type Item from "../item/Item";
-import { currentPage } from "../store/store";
-import { PageKey } from "../types/SvelteKey";
-import { joystickInitData, type IJoystickData } from "../types/IJoystickData";
+import { currentPage } from "../../store/store";
+import { PageKey } from "../../types/SvelteKey";
+import {
+  joystickInitData,
+  type IJoystickData,
+} from "../../types/IJoystickData";
 import { EventKey, emitter } from "../event/PhaserEvent";
 
 export default class PlayerSelector extends Phaser.GameObjects.Zone {

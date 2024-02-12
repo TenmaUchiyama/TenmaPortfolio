@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { AnimationKey, CharacterKey } from "../types/PhaserKey";
+import { AnimationKey, CharacterKey } from "../../types/PhaserKey";
 
 export const createCharacterAnims = (
   anims: Phaser.Animations.AnimationManager

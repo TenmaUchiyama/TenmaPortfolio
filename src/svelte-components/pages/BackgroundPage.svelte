@@ -14,10 +14,14 @@
 	import education from '/portfolio-media/Icon/education.jpg';
 	import career from '/portfolio-media/Icon/career.jpg';
 	import bag from '/portfolio-media/Icon/briefcase.jpg';
-	import { displayLanguage } from '../store/store';
+	import { displayLanguage } from '@/store/store';
+
+	import backgroundContents from '@page-contents/contents/backgroundContents.json'
+  import { onMount } from 'svelte';
+
 
 	interface IEducation {
-		icon: string;
+		iconID: string;
 		title: string;
 		degree: string;
 		location: string;
@@ -25,7 +29,7 @@
 	}
 
 	interface ICareer {
-		icon: string;
+		iconID: string;
 		title: string;
 		position: string;
 		location: string;
@@ -33,82 +37,87 @@
 		contents: string[];
 	}
 
-	const educations: IEducation[] = [
-		{
-			icon: BackmanHighIcon,
-			title: 'Arnold. O. Beckman High School',
-			degree: 'High School',
-			location: 'Irvine CA, USA',
-			year: '2014-2016'
-		},
-		{
-			icon: ASBIcon,
-			title: 'The American School of Bangkok',
-			degree: 'High School',
-			location: 'Bangkok,Thailand',
-			year: '2016-2018'
-		},
-		{
-			icon: NCUK,
-			title: 'NCUK Thailand',
-			degree: 'Foundation year',
-			location: 'Bangkok, Thailand',
-			year: '2018-2019'
-		},
-		{
-			icon: UOMIcon,
-			title: 'The University of Manchester',
-			degree: 'BEng in Electrical and Electronic Engineering',
-			location: 'Mancheser, UK',
-			year: '2019-2022'
-		},
 
-		{
-			icon: KeioIcon,
-			title: 'Keio University',
-			degree: 'MSc in Computer Science',
-			location: 'Kanagawa, Japan',
-			year: '2023~'
-		}
-	];
+	let careers : ICareer[] = backgroundContents['careers']
+	let educations : IEducation[] = backgroundContents["educations"]
 
-	const careers: ICareer[] = [
-		{
-			icon: IHI,
-			title: 'IHI Power System (Thailand) Co., Ltd.',
-			position: 'Buisiness and Engineering Intern',
-			location: 'Bangkok, Thailand',
-			year: 'July 2021 - Sep 2021',
-			contents: [
-				'Create educational materials for new employees.',
-				"Create a Python application aimed at optimizing my supervisor's weekly tasks, thereby achieving a twofold increase in efficiency.",
-				"Acquire a comprehensive understanding of the LM6000 gas turbine's structure and the maintenance workflow in its operational context."
-			]
-		},
-		{
-			icon: Serio,
-			title: 'Serio.Inc',
-			position: 'Intern Teaching Assistant Part-Time',
-			location: 'Okayama, Japan',
-			year: 'June 2023 - Sep 2023',
-			contents: [
-				'Create educational materials for new employees.',
-				"Create a Python application aimed at optimizing my supervisor's weekly tasks, thereby achieving a twofold increase in efficiency.",
-				"Acquire a comprehensive understanding of the LM6000 gas turbine's structure and the maintenance workflow in its operational context."
-			]
-		},
-		{
-			icon: Live2d,
-			title: 'Live2D Inc.',
-			position: 'Development Part-Time',
-			location: 'Tokyo, Japan',
-			year: 'June 2023 ~ ',
-			contents: [
-				'Develop Web aplications for prototype',
-				'evelopment of prototype applications for internal use'
-			]
-		}
-	];
+
+	// const educations: IEducation[] = [
+	// 	{
+	// 		icon: BackmanHighIcon,
+	// 		title: 'Arnold. O. Beckman High School',
+	// 		degree: 'High School',
+	// 		location: 'Irvine CA, USA',
+	// 		year: '2014-2016'
+	// 	},
+	// 	{
+	// 		icon: ASBIcon,
+	// 		title: 'The American School of Bangkok',
+	// 		degree: 'High School',
+	// 		location: 'Bangkok,Thailand',
+	// 		year: '2016-2018'
+	// 	},
+	// 	{
+	// 		icon: NCUK,
+	// 		title: 'NCUK Thailand',
+	// 		degree: 'Foundation year',
+	// 		location: 'Bangkok, Thailand',
+	// 		year: '2018-2019'
+	// 	},
+	// 	{
+	// 		icon: UOMIcon,
+	// 		title: 'The University of Manchester',
+	// 		degree: 'BEng in Electrical and Electronic Engineering',
+	// 		location: 'Mancheser, UK',
+	// 		year: '2019-2022'
+	// 	},
+
+	// 	{
+	// 		icon: KeioIcon,
+	// 		title: 'Keio University',
+	// 		degree: 'MSc in Computer Science',
+	// 		location: 'Kanagawa, Japan',
+	// 		year: '2023~'
+	// 	}
+	// ];
+
+	// const careers: ICareer[] = [
+	// 	{
+	// 		icon: IHI,
+	// 		title: 'IHI Power System (Thailand) Co., Ltd.',
+	// 		position: 'Buisiness and Engineering Intern',
+	// 		location: 'Bangkok, Thailand',
+	// 		year: 'July 2021 - Sep 2021',
+	// 		contents: [
+	// 			'Create educational materials for new employees.',
+	// 			"Create a Python application aimed at optimizing my supervisor's weekly tasks, thereby achieving a twofold increase in efficiency.",
+	// 			"Acquire a comprehensive understanding of the LM6000 gas turbine's structure and the maintenance workflow in its operational context."
+	// 		]
+	// 	},
+	// 	{
+	// 		icon: Serio,
+	// 		title: 'Serio.Inc',
+	// 		position: 'Intern Teaching Assistant Part-Time',
+	// 		location: 'Okayama, Japan',
+	// 		year: 'June 2023 - Sep 2023',
+	// 		contents: [
+	// 			'Create educational materials for new employees.',
+	// 			"Create a Python application aimed at optimizing my supervisor's weekly tasks, thereby achieving a twofold increase in efficiency.",
+	// 			"Acquire a comprehensive understanding of the LM6000 gas turbine's structure and the maintenance workflow in its operational context."
+	// 		]
+	// 	},
+	// 	{
+	// 		icon: Live2d,
+	// 		title: 'Live2D Inc.',
+	// 		position: 'Development Part-Time',
+	// 		location: 'Tokyo, Japan',
+	// 		year: 'June 2023 ~ ',
+	// 		contents: [
+	// 			'Develop Web aplications for prototype',
+	// 			'evelopment of prototype applications for internal use'
+	// 		]
+	// 	}
+	// ];
 
 
 
@@ -129,7 +138,7 @@
 <h1 style="font-size: 4rem; margin-bottom: 50px;"> <img src={career} style='max-width:5rem; margin-right: 10px'>{titles.career[$displayLanguage]}</h1>
 {#each careers as career}
 <div class="educationItem">
-	<img src={career.icon} alt="">
+	<img src={career.iconID} alt="">
 	<div class="content">
 		<h1>{career.title}</h1>
 		<p><img class='icon' src={bag} alt=""><b>{career.position}</b></p>
@@ -149,7 +158,7 @@
 <h1 style="font-size: 4rem; margin-bottom: 50px;"> <img src={education} style='max-width:5rem; margin-right: 10px'>{titles.education[$displayLanguage]}</h1>
 {#each educations as education}
 <div class="educationItem">
-	<img src={education.icon} alt="">
+	<img src={education.iconID} alt="">
 	<div class="content">
 		<h1>{education.title}</h1>
 		<p><img class='icon' src={degree} alt=""><b>{education.degree}</b></p>

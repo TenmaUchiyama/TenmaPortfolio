@@ -2,8 +2,8 @@
 
   
 
-    import Layout from "./Layout.svelte";
-    import { isDesktop, isMonitorOpen } from "../store/store";
+    import Layout from "@svelte/Layout.svelte";
+    import { isDesktop, isMonitorOpen } from "@/store/store";
 
 
     let contentDiv : HTMLDivElement

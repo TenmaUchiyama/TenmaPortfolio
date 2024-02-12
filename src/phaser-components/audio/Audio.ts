@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { AudioKey } from "../types/PhaserKey";
+import { AudioKey } from "../../types/PhaserKey";
 
 export default class AudioManager {
   private static scene: Phaser.Scene;

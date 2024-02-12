@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { joystickInitData, type IJoystickData } from "../types/IJoystickData";
-	import { EventKey, emitter } from "../event/PhaserEvent";
-  	import { isMonitorOpen, isOnLoading } from "../store/store";
+	import { joystickInitData, type IJoystickData } from "@/types/IJoystickData";
+	import { EventKey, emitter } from "@phaser/event/PhaserEvent";
+  	import { isMonitorOpen, isOnLoading } from "@/store/store";
 
 	const btnRadius = window.innerWidth *0.15
 	const baseRadius = window.innerWidth * 0.2;

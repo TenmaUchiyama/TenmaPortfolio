@@ -1,0 +1,20 @@
+{
+  "images": {
+    "beckmanImg": "/portfolio-media/Imgs/BeckmanHigh_Icon.jpg",
+    "asbImg": "/portfolio-media/Imgs/ASBIcon.jpg",
+    "ncukImg": "/portfolio-media/Imgs/NCUKIcon.jpg",
+    "uomImg": "/portfolio-media/Imgs/UOMIcon.jpg",
+    "keioImg": "/portfolio-media/Imgs/KeioIcon.jpg",
+    "ihiImg": "/portfolio-media/Imgs/IHI_Icon.jpg",
+    "serioImg": "/portfolio-media/Imgs/serio.jpg",
+    "live2dImg": "/portfolio-media/Imgs/Live2d.jpg"
+  },
+  "icon": {
+    "degree": "/portfolio-media/Icon/degree.jpg",
+    "calendar": "/portfolio-media/Icon/calendar.jpg",
+    "location": "/portfolio-media/Icon/location.jpg",
+    "education": "/portfolio-media/Icon/education.jpg",
+    "career": "/portfolio-media/Icon/career.jpg",
+    "bag": "/portfolio-media/Icon/briefcase.jpg"
+  }
+}

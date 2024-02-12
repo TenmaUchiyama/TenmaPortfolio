@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 import Item from "./Item";
-import { PageKey } from "../types/SvelteKey";
-import { currentPage } from "../store/store";
+import { PageKey } from "../../types/SvelteKey";
+import { currentPage } from "../../store/store";
 
 export default class ComputerItem extends Item {
   computerPage!: PageKey;

@@ -1,13 +1,16 @@
 import Phaser from "phaser";
-import { AnimationKey, AudioKey } from "../types/PhaserKey";
-import type { NavKeys } from "../types/NavKeys";
+import { AnimationKey, AudioKey } from "../../types/PhaserKey";
+import type { NavKeys } from "../../types/NavKeys";
 import type PlayerSelector from "./PlayerSelector";
 import ComputerItem from "../item/ComputerItem";
-import { isMonitorOpen, currentPage } from "../store/store";
-import { PageKey } from "../types/SvelteKey";
+import { isMonitorOpen, currentPage } from "../../store/store";
+import { PageKey } from "../../types/SvelteKey";
 import AudioManager from "../audio/Audio";
 import { EventKey, emitter } from "../event/PhaserEvent";
-import { joystickInitData, type IJoystickData } from "../types/IJoystickData";
+import {
+  joystickInitData,
+  type IJoystickData,
+} from "../../types/IJoystickData";
 
 export default class MyPlayer extends Phaser.Physics.Arcade.Sprite {
   private PLAYER_VELOCITY: number = 200;

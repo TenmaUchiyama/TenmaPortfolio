@@ -7,13 +7,13 @@ import {
   MapKey,
   LayerKey,
   FontKey,
-} from "../types/PhaserKey";
-import type { NavKeys } from "../types/NavKeys";
-import { isBgmOn, isDesktop, isMonitorOpen } from "../store/store";
+} from "../../types/PhaserKey";
+import type { NavKeys } from "../../types/NavKeys";
+import { isBgmOn, isDesktop, isMonitorOpen } from "../../store/store";
 import PlayerSelector from "../character/PlayerSelector";
 import ComputerItem from "../item/ComputerItem";
 import type Item from "../item/Item";
-import { PageKey } from "../types/SvelteKey";
+import { PageKey } from "../../types/SvelteKey";
 import AudioManager from "../audio/Audio";
 import { EventKey, emitter } from "../event/PhaserEvent";
 

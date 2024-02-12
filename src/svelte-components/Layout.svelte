@@ -1,6 +1,6 @@
 <script>
 	import logo from '/logo.svg';
-	import { displayLanguage } from '../store/store';
+	import { displayLanguage } from '@/store/store';
 
 </script>
 
