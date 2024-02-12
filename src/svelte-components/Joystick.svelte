@@ -3,12 +3,13 @@
 	import { EventKey, emitter } from "@phaser/event/PhaserEvent";
   	import { isMonitorOpen, isOnLoading } from "@/store/store";
 
-	const btnRadius = window.innerWidth *0.15
-	const baseRadius = window.innerWidth * 0.2;
+
+
+	const btnRadius = window.innerWidth *0.14
+	const baseRadius =  window.innerWidth * 0.2 
+
 	const thumbRadius = baseRadius / 3;
 	const maxRadius = baseRadius - thumbRadius;
-
-
 
 
 

@@ -66,8 +66,8 @@ export default class Game extends Phaser.Scene {
     AudioManager.setScene(this);
 
     createCharacterAnims(this.anims);
-    this.player = this.add.myPlayer(460, 350, CharacterKey.STICKMAN);
-    this.playerSelector = new PlayerSelector(this, 0, 0, 16, 16);
+    this.player = this.add.myPlayer(500, 250, CharacterKey.STICKMAN);
+    this.playerSelector = new PlayerSelector(this, 0, 0, 45, 60);
 
     this.cameras.main.zoom = this.MAPSCALE;
     this.cameras.main.startFollow(this.player, true);
