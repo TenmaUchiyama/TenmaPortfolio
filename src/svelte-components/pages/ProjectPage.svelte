@@ -65,6 +65,15 @@
 		padding : 10px;
 		height: 100%;
 		overflow-y: auto;
+		
+	}
+
+
+	@media(max-width: 500px)
+	{
+		.main{
+			padding-bottom: 40%;
+		}
 	}
 
 

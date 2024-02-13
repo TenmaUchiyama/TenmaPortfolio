@@ -136,7 +136,7 @@
 
 @media (max-width: 500px) {
 	.main{
-		padding-bottom: 20%;
+		padding-bottom: 35%;
 	}
 	.icon{
 	max-width: 10%;
@@ -190,6 +190,7 @@
 	padding:0;
 }
 }
+
 
 </style>
 
