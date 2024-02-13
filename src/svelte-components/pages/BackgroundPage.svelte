@@ -1,27 +1,15 @@
 <script lang="ts">
-	import BackmanHighIcon from '/portfolio-media/Imgs/BeckmanHigh_Icon.jpg';
-	import ASBIcon from '/portfolio-media/Imgs/ASBIcon.jpg';
-	import NCUK from '/portfolio-media/Imgs/NCUKIcon.jpg';
-	import UOMIcon from '/portfolio-media/Imgs/UOMIcon.jpg';
-	import KeioIcon from '/portfolio-media/Imgs/KeioIcon.jpg';
-	import IHI from '/portfolio-media/Imgs/IHI_Icon.jpg';
-	import Serio from '/portfolio-media/Imgs/serio.jpg';
-	import Live2d from '/portfolio-media/Imgs/Live2d.jpg';
 
-	import degree from '/portfolio-media/Icon/degree.jpg';
-	import calendar from '/portfolio-media/Icon/calendar.jpg';
-	import location from '/portfolio-media/Icon/location.jpg';
-	import education from '/portfolio-media/Icon/education.jpg';
-	import career from '/portfolio-media/Icon/career.jpg';
-	import bag from '/portfolio-media/Icon/briefcase.jpg';
+
+
 	import { displayLanguage } from '@/store/store';
 
 	import backgroundContents from '@page-contents/contents/backgroundContents.json'
-  import { onMount } from 'svelte';
+	import medias from "@page-contents/media-path/backgroundMediaPath.json"
 
 
 	interface IEducation {
-		iconID: string;
+		iconPath: string;
 		title: string;
 		degree: string;
 		location: string;
@@ -29,7 +17,7 @@
 	}
 
 	interface ICareer {
-		iconID: string;
+		iconPath: string;
 		title: string;
 		position: string;
 		location: string;
@@ -41,83 +29,6 @@
 	let careers : ICareer[] = backgroundContents['careers']
 	let educations : IEducation[] = backgroundContents["educations"]
 
-
-	// const educations: IEducation[] = [
-	// 	{
-	// 		icon: BackmanHighIcon,
-	// 		title: 'Arnold. O. Beckman High School',
-	// 		degree: 'High School',
-	// 		location: 'Irvine CA, USA',
-	// 		year: '2014-2016'
-	// 	},
-	// 	{
-	// 		icon: ASBIcon,
-	// 		title: 'The American School of Bangkok',
-	// 		degree: 'High School',
-	// 		location: 'Bangkok,Thailand',
-	// 		year: '2016-2018'
-	// 	},
-	// 	{
-	// 		icon: NCUK,
-	// 		title: 'NCUK Thailand',
-	// 		degree: 'Foundation year',
-	// 		location: 'Bangkok, Thailand',
-	// 		year: '2018-2019'
-	// 	},
-	// 	{
-	// 		icon: UOMIcon,
-	// 		title: 'The University of Manchester',
-	// 		degree: 'BEng in Electrical and Electronic Engineering',
-	// 		location: 'Mancheser, UK',
-	// 		year: '2019-2022'
-	// 	},
-
-	// 	{
-	// 		icon: KeioIcon,
-	// 		title: 'Keio University',
-	// 		degree: 'MSc in Computer Science',
-	// 		location: 'Kanagawa, Japan',
-	// 		year: '2023~'
-	// 	}
-	// ];
-
-	// const careers: ICareer[] = [
-	// 	{
-	// 		icon: IHI,
-	// 		title: 'IHI Power System (Thailand) Co., Ltd.',
-	// 		position: 'Buisiness and Engineering Intern',
-	// 		location: 'Bangkok, Thailand',
-	// 		year: 'July 2021 - Sep 2021',
-	// 		contents: [
-	// 			'Create educational materials for new employees.',
-	// 			"Create a Python application aimed at optimizing my supervisor's weekly tasks, thereby achieving a twofold increase in efficiency.",
-	// 			"Acquire a comprehensive understanding of the LM6000 gas turbine's structure and the maintenance workflow in its operational context."
-	// 		]
-	// 	},
-	// 	{
-	// 		icon: Serio,
-	// 		title: 'Serio.Inc',
-	// 		position: 'Intern Teaching Assistant Part-Time',
-	// 		location: 'Okayama, Japan',
-	// 		year: 'June 2023 - Sep 2023',
-	// 		contents: [
-	// 			'Create educational materials for new employees.',
-	// 			"Create a Python application aimed at optimizing my supervisor's weekly tasks, thereby achieving a twofold increase in efficiency.",
-	// 			"Acquire a comprehensive understanding of the LM6000 gas turbine's structure and the maintenance workflow in its operational context."
-	// 		]
-	// 	},
-	// 	{
-	// 		icon: Live2d,
-	// 		title: 'Live2D Inc.',
-	// 		position: 'Development Part-Time',
-	// 		location: 'Tokyo, Japan',
-	// 		year: 'June 2023 ~ ',
-	// 		contents: [
-	// 			'Develop Web aplications for prototype',
-	// 			'evelopment of prototype applications for internal use'
-	// 		]
-	// 	}
-	// ];
 
 
 
@@ -132,17 +43,19 @@
 			en : "Career",
 			th: "อาชีพ"
 		},
-	}
+	} 
 </script>
 
-<h1 style="font-size: 4rem; margin-bottom: 50px;"> <img src={career} style='max-width:5rem; margin-right: 10px'>{titles.career[$displayLanguage]}</h1>
+<main class="main">
+	
+<h1 style="font-size: 4rem; margin-bottom: 50px;"> <img src={medias.icon.career} style='max-width:5rem; margin-right: 10px'>{titles.career[$displayLanguage]}</h1>
 {#each careers as career}
 <div class="educationItem">
-	<img src={career.iconID} alt="">
-	<div class="content">
+	<img src={career.iconPath} alt="">
+	<div class="car-content content">
 		<h1>{career.title}</h1>
-		<p><img class='icon' src={bag} alt=""><b>{career.position}</b></p>
-		<p><img class='icon' src={calendar} alt="">{career.year}</p>
+		<p><img class='icon' src={medias.icon.bag} alt=""><b>{career.position}</b></p>
+		<p><img class='icon' src={medias.icon.calendar} alt="">{career.year}</p>
 		<!-- <ul class="list-group">
 			{#each career.contents as content}
 				<li class='list-group-item'> </li>
@@ -155,25 +68,37 @@
 <br>
 <br>
 <br>
-<h1 style="font-size: 4rem; margin-bottom: 50px;"> <img src={education} style='max-width:5rem; margin-right: 10px'>{titles.education[$displayLanguage]}</h1>
+<h1 style="font-size: 4rem; margin-bottom: 50px;"> <img src={medias.icon.education} style='max-width:5rem; margin-right: 10px'>{titles.education[$displayLanguage]}</h1>
 {#each educations as education}
 <div class="educationItem">
-	<img src={education.iconID} alt="">
-	<div class="content">
+	<img src={education.iconPath} alt="">
+	<div class="edu-content content">
 		<h1>{education.title}</h1>
-		<p><img class='icon' src={degree} alt=""><b>{education.degree}</b></p>
-		<p><img class='icon' src={calendar} alt="">{education.year}</p>
-		<p><img class='icon' src={location} alt="">{education.location}</p>
+		<p><img class='icon' src={medias.icon.degree} alt=""><b>{education.degree}</b></p>
+		<p><img class='icon' src={medias.icon.calendar} alt="">{education.year}</p>
+		<p><img class='icon' src={medias.icon.location} alt="">{education.location}</p>
 	</div>
 	
 </div>
 {/each}
 
 
+</main>
 <style>
+
+
+.main
+{
+	width:100%;
+	height: 100%; 
+	padding: 20px;
+	overflow-y: auto;
+}
+
+
 .educationItem {
     width: 100%;
-	height: 40%;
+	height: auto;
     border-radius: 5px;
     border-style: solid;
 	border-width: 1px;
@@ -191,9 +116,11 @@
 }
 
 
+
 .content p 
 {
-	gap: 10px;
+	font-size: 2rem;
+	gap: 5px;
 }
 .educationItem img {
 	width: 15%;
@@ -205,6 +132,64 @@
 	margin-right: 10px;
 }
 
+
+
+@media (max-width: 500px) {
+	.main{
+		padding-bottom: 20%;
+	}
+	.icon{
+	max-width: 10%;
+	margin-right: 10px;
+		}
+
+.educationItem {
+    width: 100%;
+	height: 30%;
+    border-radius: 5px;
+    border-style: solid;
+	border-width: 1px;
+    box-shadow: 14px 14px 30px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	/* justify-content: space-evenly; */
+	margin-bottom: 20px ;
+	gap: 5%;
+}
+
+
+.content{
+	width: 100% ;
+}
+
+.content h1{
+	font-size: 1.2rem;
+}
+
+
+.car-content p 
+{
+	font-size: 0.7rem;
+	margin: 3;
+}
+
+.edu-content p 
+{
+	font-size: 0.5rem;
+	margin: 0;
+}
+
+.educationItem img {
+	width: 35%;
+	margin-left: 10%;
+}
+
+.icon{
+	width: 5px;
+	margin: 2px;
+	padding:0;
+}
+}
 
 </style>
 

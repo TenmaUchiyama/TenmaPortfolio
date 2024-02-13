@@ -1,8 +1,8 @@
 import { writable } from "svelte/store";
 import { PageKey } from "../types/SvelteKey";
-import Game from "../phaser-components/scene/Game";
-import phaserGame from "../PhaserGame";
-import AudioManager from "../phaser-components/audio/Audio";
+import Game from "@phaser/scene/Game";
+import phaserGame from "@/PhaserGame";
+import AudioManager from "@phaser/audio/Audio";
 
 export const isDesktop = writable<boolean>(true);
 

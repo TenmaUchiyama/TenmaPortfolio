@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Typescript",
+    "proficiency": 78,
+    "color": ""
+  },
+  {
+    "name": "Python",
+    "proficiency": 72,
+    "color": "bg-info"
+  },
+  {
+    "name": "C#",
+    "proficiency": 68,
+    "color": "bg-success"
+  },
+  {
+    "name": "C++",
+    "proficiency": 48,
+    "color": "bg-warning"
+  },
+  {
+    "name": "Svelte",
+    "proficiency": 70,
+    "color": "bg-danger"
+  },
+  {
+    "name": "Unity",
+    "proficiency": 64,
+    "color": "bg-secondary"
+  },
+  {
+    "name": "Phaser",
+    "proficiency": 54,
+    "color": ""
+  }
+]

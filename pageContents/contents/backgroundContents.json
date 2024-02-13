@@ -5,35 +5,35 @@
       "degree": "High School",
       "location": "Irvine CA, USA",
       "year": "2014-2016",
-      "iconID": "beckmanImg"
+      "iconPath": "/portfolio-media/Imgs/BeckmanHigh_Icon.jpg"
     },
     {
       "title": "The American School of Bangkok",
       "degree": "High School",
       "location": "Bangkok,Thailand",
       "year": "2016-2018",
-      "iconID": "asbImg"
+      "iconPath": "/portfolio-media/Imgs/ASBIcon.jpg"
     },
     {
       "title": "NCUK Thailand",
       "degree": "Foundation year",
       "location": "Bangkok, Thailand",
       "year": "2018-2019",
-      "iconID": "ncukImg"
+      "iconPath": "/portfolio-media/Imgs/NCUKIcon.jpg"
     },
     {
       "title": "The University of Manchester",
       "degree": "BEng in Electrical and Electronic Engineering",
       "location": "Mancheser, UK",
       "year": "2019-2022",
-      "iconID": "uomImg"
+      "iconPath": "/portfolio-media/Imgs/UOMIcon.jpg"
     },
     {
       "title": "Keio University",
       "degree": "MSc in Computer Science",
       "location": "Kanagawa, Japan",
       "year": "2023~",
-      "iconID": "keioImg"
+      "iconPath": "/portfolio-media/Imgs/KeioIcon.jpg"
     }
   ],
 
@@ -48,7 +48,7 @@
         "Create a Python application aimed at optimizing my supervisor's weekly tasks, thereby achieving a twofold increase in efficiency.",
         "Acquire a comprehensive understanding of the LM6000 gas turbine's structure and the maintenance workflow in its operational context."
       ],
-      "iconID": "ihiImg"
+      "iconPath": "/portfolio-media/Imgs/IHI_Icon.jpg"
     },
     {
       "title": "Serio.Inc",
@@ -60,7 +60,7 @@
         "Create a Python application aimed at optimizing my supervisor's weekly tasks, thereby achieving a twofold increase in efficiency.",
         "Acquire a comprehensive understanding of the LM6000 gas turbine's structure and the maintenance workflow in its operational context."
       ],
-      "iconID": "serioImg"
+      "iconPath": "/portfolio-media/Imgs/serio.jpg"
     },
     {
       "title": "Live2D Inc.",
@@ -71,7 +71,7 @@
         "Develop Web aplications for prototype",
         "evelopment of prototype applications for internal use"
       ],
-      "iconID": "live2dImg"
+      "iconPath": "/portfolio-media/Imgs/Live2d.jpg"
     }
   ]
 }

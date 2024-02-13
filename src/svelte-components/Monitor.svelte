@@ -3,7 +3,7 @@
   
 
     import Layout from "@svelte/Layout.svelte";
-    import { isDesktop, isMonitorOpen } from "@/store/store";
+    import { isMonitorOpen } from "@/store/store";
 
 
     let contentDiv : HTMLDivElement
@@ -34,7 +34,7 @@
    
 
 
- {#if $isDesktop}
+
     <!-- #region desktop -->
     <div class="monitor-container" >
         <h2>Press Space To Go Back</h2>
@@ -52,19 +52,7 @@
     
     </div>
 
-    <!-- #endregion desktop -->
-    {:else}
-    <div class="phone-monitor">
-        <div style="display: flex; flex-direction:row; margin:0; ">
-          
-            <svg style='width:10vw;'  on:touchstart={()=>{isMonitorOpen.closePage()}} class='close-btn'  viewBox="0 0 2050 2050" data-name="Layer 3" id="Layer_3" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:#000000;}</style></defs><title></title><path class="cls-1" d="M1582.2,1488.7a44.9,44.9,0,0,1-36.4-18.5l-75.7-103.9A431.7,431.7,0,0,0,1121.4,1189h-60.1v64c0,59.8-33.5,112.9-87.5,138.6a152.1,152.1,0,0,1-162.7-19.4l-331.5-269a153.5,153.5,0,0,1,0-238.4l331.5-269a152.1,152.1,0,0,1,162.7-19.4c54,25.7,87.5,78.8,87.5,138.6v98.3l161,19.6a460.9,460.9,0,0,1,404.9,457.4v153.4a45,45,0,0,1-45,45Z"></path></g></svg>
-        </div>
-   
-        <Layout>
-            <slot></slot>
-        </Layout>
-    </div>
-    {/if}
+
     <style>
 
         h2{
@@ -106,8 +94,9 @@
             background: linear-gradient(transparent 3%, rgba(255, 255, 255, 0.2) 3%, transparent 10%); /* ノイズパターン */
             background-size: 10px 10px;
             position: absolute;
-            overflow: auto;
-            padding: 20px;
+           overflow-y: auto 
+           ;
+ 
         }
         
         .close-btn
@@ -132,14 +121,6 @@
         }
 
 
-        .phone-monitor{
-            background-color: white;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-    }
 
 
     

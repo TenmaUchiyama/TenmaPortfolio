@@ -1,0 +1,84 @@
+{
+  "home-content-greeting": {
+    "ja": "はじめまして！",
+    "en": "Hello!",
+    "th": "สวัสดีครับ"
+  },
+  "home-content-name": {
+    "ja": "内山　天満",
+    "en": "Tenma Uchiyama",
+    "th": "เทนมะ อูชิยามะ"
+  },
+  "home-intro-school": {
+    "ja": "修士 慶応義塾大学 Interactive Media",
+    "en": "MSc in Computer Science at Keio University",
+    "th": "นิสิตปริญญาโทชั้นปีที่ Keio มหาวิทยาลัย"
+  },
+  "home-label-introduction": {
+    "ja": "自己紹介",
+    "en": "Introduction",
+    "th": "แนะนำตัว"
+  },
+  "home-label-birthdate": {
+    "ja": "誕生日",
+    "en": "Birthdate",
+    "th": "วันเกิด"
+  },
+  "home-content-birthdate": {
+    "ja": "平成10年10月18日",
+    "en": "18th October 1998",
+    "th": "18 ตุลาคม 2541"
+  },
+  "home-label-job": {
+    "ja": "役職",
+    "en": "Position",
+    "th": "ตำแหน่ง"
+  },
+  "home-content-job": {
+    "ja": "学生",
+    "en": "Student",
+    "th": "นักเรียน"
+  },
+  "home-label-school": {
+    "ja": "所属",
+    "en": "Affiliation",
+    "th": "สังกัด"
+  },
+  "home-content-school": {
+    "ja": "修士 慶応義塾大学開放環境科学専攻情報工学科 Interactive Media Lab",
+    "en": "MSc Open Environment Science and Engineering, Computer Science at Keio University Interactive Media Lab",
+    "th": "นิสิตปริญญาโท คอมพิวเตอร์ไซเอนซ์ ที่มหาวิทยาลัยเคอิโอ สาขาวิชา Interactive Media Lab"
+  },
+  "home-label-interests": {
+    "ja": "興味",
+    "en": "Interests",
+    "th": "ความสนใจ"
+  },
+  "home-content-interests": {
+    "ja": "XRの分野に興味があります。将来の夢は、街に出かければみんなが当たり前のようにARグラスをかけて生活している光景を見ることです。",
+    "en": "I am interested in the field of XR. My dream for the future is to see a scene where everyone is wearing AR glasses as a matter of course when they go out into the city.",
+    "th": "ฉันสนใจในสาขา XR ความฝันของฉันสำหรับอนาคตคือการเห็นภาพที่ทุกคนสวมแว่น AR เป็นเรื่องปกติเมื่อพวกเขาออกไปนอกเมือง"
+  },
+  "home-label-hobby": {
+    "ja": "趣味",
+    "en": "Hobby",
+    "th": "งานอดิเรก"
+  },
+  "home-content-hobby": {
+    "ja": [
+      "昔はダブルダッチという二本の縄を使った縄跳びをやっていました。そこから派生してトリッキングやブレイクダンスなども多少たしなんでおりました。",
+      "アニメや漫画を読むのが好きです。広いジャンルを見ていますが、特にお気に入りの作品は「氷菓」「CLANNAD -After Story-」 「ぐらんぶる」です。",
+      "面白いと思ったものはいろいろ手を出してみたい性格で、ジェスチャーで操作するMP3プレイヤーを作ってみたり、声で操作するドリンクサーバー作ってみたり、意味もなく思いついたものを作るの好きです。"
+    ],
+    "en": [
+      "I used to play Double Dutch when was a kid, which involves jumping with two ropes. From there, I dabbled in tricking and breakdancing.",
+      "I like reading anime and manga. I watch a wide range of genres, but my favorite works are 'Hyouka', 'CLANNAD -After Story-', and 'Grand Blue'.",
+      "I like to try my hand at anything I find interesting, such as creating an MP3 player operated by gestures, a drink server operated by voice, or just making something whimsical without any particular reason."
+    ],
+    "th": [
+      "ฉันเคยเล่นกระโดดเชือกแบบดับเบิ้ลดัตช์ที่ใช้เชือกสองเส้น จากนั้นฉันก็ลองเล่นทริกกิ้งและเต้นบรีกแดนซ์",
+      "ฉันชอบอ่านอนิเมะและมังงะ ฉันดูหลายประเภท แต่ผลงานที่ฉันชื่นชอบมากที่สุดคือ 'Hyouka', 'CLANNAD -After Story-' และ 'Grand Blue'",
+      "ฉันชอบลองทำอะไรที่ฉันคิดว่าน่าสนใจ เช่น การสร้างเครื่องเล่น MP3 ที่ควบคุมด้วยท่าทาง หรือเครื่องจ่ายเครื่องดื่มที่ควบคุมด้วยเสียง ฉันชอบทำสิ่งที่เกิดขึ้นในหัวโดยไม่มีเหตุผลเฉพาะ"
+    ]
+  }
+}

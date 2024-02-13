@@ -3,7 +3,9 @@ import Monitor from "@svelte/Monitor.svelte";
 import Project from "@svelte/pages/ProjectPage.svelte";
 import Background from "@svelte/pages/BackgroundPage.svelte";
 import HobbyPage from "@svelte/pages/SkillPage.svelte";
-import HomePage from "@svelte/pages/HomePage.svelte";
+import HomePage from "@svelte/pages/HomePage.svelte"
+import MobileScreen from "@svelte/MobileScreen.svelte";
+import HomePageMobile from "@svelte/mobilePages/HomePageMobile.svelte";
 import { isMonitorOpen, currentPage , isOnLoading, loadingProgress, isDesktop} from "./store/store";
 import { PageKey } from "./types/SvelteKey"
 import { onMount } from "svelte";
@@ -11,7 +13,7 @@ import Joystick from "@svelte/Joystick.svelte";
 
 
 
-
+let pages:any;
 let isDesktopDevice : boolean = false
 onMount(()=> {
 /* Storing user's device details in a variable*/
@@ -25,19 +27,21 @@ let regexp = /android|iphone|kindle|ipad/i;
 /* Using test() method to search regexp in details 
   it returns boolean value*/
 isDesktopDevice = !regexp.test(details);
-
+  
+pages = {
+   [PageKey.HOME] : isDesktopDevice ? HomePage : HomePageMobile, 
+   [PageKey.BACKGROUND] : Background,
+   [PageKey.PROJECT] : Project,
+   [PageKey.HOBBY] : HobbyPage
+}
 isDesktop.set(isDesktopDevice)
 })
 
 
 
-const pages = {
-   [PageKey.HOME] : HomePage, 
-   [PageKey.BACKGROUND] : Background,
-   [PageKey.PROJECT] : Project,
-   [PageKey.HOBBY] : HobbyPage
-}
 
+
+  
 
 
 </script>
@@ -63,11 +67,15 @@ const pages = {
 {/if}
 
 {#if $isMonitorOpen && $currentPage !== PageKey.NONE}
+
 {#if isDesktopDevice}
 <Monitor>
    <svelte:component this={pages[$currentPage]}/>
 </Monitor>
 {:else}
+<MobileScreen>
+   <svelte:component this={pages[$currentPage]}/>
+</MobileScreen>
 {/if}
 {/if}
 

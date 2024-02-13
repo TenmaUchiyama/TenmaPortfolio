@@ -5,52 +5,10 @@ import Prog from '/portfolio-media/Icon/programming.jpg'
 import Ja from '/portfolio-media/Icon/japan.jpg'
 import En from '/portfolio-media/Icon/english.jpg'
 import { displayLanguage } from '@/store/store';
+import skills from '@page-contents/contents/skillContent.json'
 
 
-    const skills =[ 
-    {
-        name: "Typescript", 
-        proficiency : 78,
-        color: ""
-    },
-    {
-        name: "Python", 
-        proficiency : 72,
-        color: "bg-info"
-    },
-    {
-        name: "C#", 
-        proficiency : 68,
-        color: "bg-success"
-    },
-    {
-        name: "C++", 
-        proficiency : 48,
-        color: "bg-warning"
-    },
-    {
-        name: "Svelte", 
-        proficiency : 70,
-        color: "bg-danger"
-    },
-    {
-        name: "Unity", 
-        proficiency : 64,
-        color: "bg-secondary"
-    },
-    {
-        name: "Phaser", 
-        proficiency : 54,
-        color: ""
-    },
-    
-    ]
-
-
-
-
-
-    const content = {
+    const content  : any= {
         'title-language' : {
         ja : "言語",
         en : "Language",
@@ -76,7 +34,7 @@ import { displayLanguage } from '@/store/store';
 </script>
 
 
-<main class="container mt-5">
+<main class="container">
 
     <section id="skills" class="mt-5">
         <ul class="list-unstyled">
@@ -116,7 +74,31 @@ import { displayLanguage } from '@/store/store';
 
 
 <style>
+.container 
+{
+       height: 100%;
+    overflow-y: auto;
+    width: 100vw;
+    margin: 0; 
+    padding-bottom: 10%;
+}
 .skill-list{
+ 
     margin-top: 1%;
+    padding: 0;
+}
+
+
+
+@media (max-width: 500px) 
+{
+    .container 
+{
+       height: 100%;
+    overflow-y: auto;
+    width: 100vw;
+    margin: 0; 
+    padding-bottom: 50%;
+} 
 }
 </style>
