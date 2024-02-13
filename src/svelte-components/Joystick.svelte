@@ -17,8 +17,9 @@
 	function joysctickComponent(node: SVGSVGElement, param?: any) {
 		const base: SVGSVGElement = document.querySelector('#base') as SVGSVGElement;
 		const thumb: SVGSVGElement = document.querySelector('#thumb') as SVGSVGElement;
-
-		let centerX = node.width.baseVal.value / 2  ;
+		
+		
+		let centerX = node.width.baseVal.value / 2  ;	
 		let centerY = node.height.baseVal.value / 2 ;
 
 		base.setAttribute('cx', String(centerX));
@@ -114,11 +115,17 @@ emitter.emit(EventKey.JOYSTICK, joystickData)
 
 	function buttonComponent(node:SVGSVGElement) {
 		const button : SVGSVGElement = document.querySelector('#btn') as SVGSVGElement;
+		const btnLabel : HTMLParagraphElement = document.createElement('p'); 
+
+
+
+	
 		let isBtnPressedOnce : boolean = false;
 
 		let centerX = node.width.baseVal.value / 2  ;
 		let centerY = node.height.baseVal.value / 2  ;
 
+		
 	
 		button.setAttribute('cx', String(centerX));
 		button.setAttribute('cy', String(centerY));
@@ -148,7 +155,11 @@ emitter.emit(EventKey.JOYSTICK, joystickData)
 
 
 {#if $isMonitorOpen === false && $isOnLoading === false}
+
+
+
 <svg
+	name="joystick"
 	id="joystick"
 	use:joysctickComponent
 	width={baseRadius * 3}
@@ -159,6 +170,7 @@ emitter.emit(EventKey.JOYSTICK, joystickData)
 	left : 0;
 	"
 >
+
 	<circle id="base" r={baseRadius}  />
 	<circle id="thumb" r={thumbRadius}  />
 </svg>

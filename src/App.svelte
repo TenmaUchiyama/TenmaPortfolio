@@ -51,6 +51,7 @@ isDesktop.set(isDesktopDevice)
 <!-- svelte-ignore empty-block -->
 {#if $isOnLoading}
    <div class="loading">
+      <h1>Whelcome to Tenma's Domain</h1>
       <img src="/logo.svg" alt="" class='logo'>
       <h2 style="color: white;">Loading...</h2>
       
@@ -86,6 +87,13 @@ isDesktop.set(isDesktopDevice)
 
 
 <style>
+
+
+
+h1{
+   color: white; 
+   text-align: center;
+}
    .loading{
       position: relative;
       width: 100vw;
@@ -98,10 +106,36 @@ isDesktop.set(isDesktopDevice)
    }
 
 
+	
 
 
-   .loading img{
-      width: 10%;
+
+   .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
+   }
+
+
+   @media(max-width: 500px)
+	{
+		
+      .loading img{
+      width: 40%;
+   }
+
+
+   .loading{
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(29, 29, 29, 0.99);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
    }
 
 
@@ -109,10 +143,10 @@ isDesktop.set(isDesktopDevice)
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 10px;
    }
 
+	}
 
-   
 
 </style>
