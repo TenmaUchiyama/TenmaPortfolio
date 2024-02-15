@@ -106,6 +106,10 @@ h1{
    }
 
 
+   .loading img{
+      width: 20%;}
+
+
 	
 
 
