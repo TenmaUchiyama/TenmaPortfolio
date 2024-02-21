@@ -51,7 +51,7 @@ isDesktop.set(isDesktopDevice)
 <!-- svelte-ignore empty-block -->
 {#if $isOnLoading}
    <div class="loading">
-      <h1>Whelcome to Tenma's Domain</h1>
+      <h1>Welcome to Tenma's Domain</h1>
       <img src="/logo.svg" alt="" class='logo'>
       <h2 style="color: white;">Loading...</h2>
       
