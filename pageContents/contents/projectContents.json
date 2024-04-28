@@ -1,5 +1,44 @@
 [
   {
+    "videoContain": "https://www.youtube.com/embed/tFCa5PGTfbo?si=wFjFZ9yLt9C0I1oQ",
+    "imgPath": "/portfolio-media/ProjectImg/SignLangColor.png",
+    "title": {
+      "en": "Colorful Gestures VR",
+      "ja": "手話っと塗り絵",
+      "th": "คัลเลอร์ฟูลเจสเจอร์ VR"
+    },
+    "description": {
+      "ja": "これは、私がイマクリエイト社のVR開発体験インターンに参加した際、3人のチームで開発したアプリです。このアプリは、ハンドジェスチャーを活用し、VRならではの方法で課題解決を行うという内容でした。私たちの目的は、難聴者が多くの人々とスムーズにコミュニケーションを取れるようにすることであり、そのためには多くの人々に手話を理解してもらうことが必要です。そこで、Oculusのハンドジェスチャー機能を使用し、手話で色のペイントボールを出現させ、まだ色が塗られていないオブジェクトを塗るというゲームを開発して楽しみながら覚えてもらおうというものでした。このアプリの開発を通じて、Unityを使用したOculusアプリの開発やGithubを利用したチーム開発などのハードスキルだけでなく、チームメンバーとのコミュニケーションを取りながら進めるソフトスキルも身につけることができました。",
+      "en": "This application was developed by a team of three during my VR development experience internship at Imacreate Inc. The project involved utilizing hand gestures to devise a solution that could only be implemented in VR. Our goal was to enhance communication for people with hearing disabilities by encouraging more individuals to understand sign language. By leveraging Oculus's hand gesture functionality, we created an engaging game where players use sign language to produce paintballs, which are then used to color objects that haven't been painted yet. Throughout the development of this app, I not only acquired hard skills like developing Oculus apps with Unity and using Github for team collaboration but also improved soft skills like communicating effectively with team members.",
+      "th": "แอปพลิเคชันนี้ถูกพัฒนาโดยทีมของสามคนขณะที่ฉันเข้าร่วมการฝึกงานประสบการณ์การพัฒนา VR ที่บริษัท Imacreate Inc. โปรเจ็คนี้ได้ใช้ท่าทางมือเพื่อคิดค้นวิธีการแก้ไขปัญหาที่สามารถดำเนินการได้เฉพาะใน VR เท่านั้น เป้าหมายของเราคือการเพิ่มการสื่อสารสำหรับผู้ที่มีความบกพร่องทางการได้ยินโดยส่งเสริมให้บุคคลมากขึ้นเข้าใจภาษามือ ด้วยการใช้ฟังก์ชันท่าทางมือของ Oculus พวกเราได้พัฒนาเกมที่น่าสนใจซึ่งผู้เล่นใช้ภาษามือในการผลิตลูกบอลสีซึ่งจะถูกใช้เพื่อทาสีวัตถุที่ยังไม่ได้รับการทาสี ตลอดการพัฒนาแอปพลิเคชันนี้ ฉันไม่เพียงได้เรียนรู้ทักษะการทำงานหนักเช่นการพัฒนาแอป Oculus ด้วย Unity และการใช้ Github"
+    },
+    "skill": [
+      { "lang": "Unity", "level": "86", "color": "bg-info" },
+      { "lang": "C#", "level": "76", "color": "" },
+      { "lang": "VR", "level": "100", "color": "bg-danger" }
+    ]
+  },
+  {
+    "videoContain": "https://www.youtube.com/embed/8F6ZyBDNl8g?si=99kw_xA7qXC0YEww",
+    "imgPath": "/portfolio-media/ProjectImg/MRProject.jpg",
+    "title": {
+      "en": "BombPassing",
+      "ja": "BombPassing",
+      "th": "BombPassing"
+    },
+    "description": {
+      "ja": "このゲームは、授業の課題としてグループで制作したものです。最近、オンラインゲームでは異なるデバイスを使って遠隔地にいてもリアルタイムで協力プレイが可能ですが、私は一つのデバイスを共有して直接楽しむ体験も大切だと思います。Unityを使用してAndroidアプリを開発しました。開発中はグループでアイデアを出し合いながら、どのようにしてゲームを面白くするかを話し合う過程がとても楽しかったです！",
+      "en": "This game was developed as a group project for a class. While online gaming allows for collaborative play across distances with different devices, I believe there's also great value in sharing fun times together on a single device. We developed this Android app using Unity. The process of brainstorming with the group and discussing how to make the game fun was incredibly enjoyable!",
+      "th": "เกมนี้ถูกพัฒนาขึ้นเป็นโปรเจคกลุ่มสำหรับการเรียนในชั้นเรียน เกมออนไลน์ในปัจจุบันช่วยให้สามารถเล่นเกมร่วมมือกันได้แม้จะอยู่ห่างไกลกันและใช้อุปกรณ์ต่างๆ แต่ผมเชื่อว่าการแชร์ประสบการณ์ที่สนุกด้วยการใช้อุปกรณ์เดียวกันก็เป็นประสบการณ์ที่ดีเช่นกัน เราได้พัฒนาแอพ Android นี้โดยใช้ Unity การที่ได้ทำงานร่วมกันในกลุ่มและพูดคุยกันเกี่ยวกับวิธีที่จะทำให้เกมน่าสนใจนั้นเป็นกระบวนการที่สนุกมาก!"
+    },
+    "skill": [
+      { "lang": "Unity", "level": "86", "color": "bg-info" },
+      { "lang": "C#", "level": "76", "color": "" },
+      { "lang": "Android", "level": "96", "color": "bg-success" },
+      { "lang": "C++", "level": "40", "color": "bg-warning" }
+    ]
+  },
+  {
     "videoContain": "",
     "imgPath": "/portfolio-media/ProjectImg/Puzzlebot.jpg",
     "title": {

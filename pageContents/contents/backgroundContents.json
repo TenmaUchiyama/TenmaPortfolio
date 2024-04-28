@@ -72,6 +72,15 @@
         "evelopment of prototype applications for internal use"
       ],
       "iconPath": "/portfolio-media/Imgs/Live2d.jpg"
+    },
+
+    {
+      "title": "ImaCreate株式会社",
+      "position": "Internship",
+      "location": "Tokyo, Japan",
+      "year": "November 2023",
+      "contents": ["Develop VR Application"],
+      "iconPath": "/portfolio-media/Imgs/ImaCreateLogo.jpeg"
     }
   ]
 }
