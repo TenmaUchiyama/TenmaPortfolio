@@ -16,7 +16,7 @@
   },
   {
     "name": "C++",
-    "proficiency": 48,
+    "proficiency": 38,
     "color": "bg-warning"
   },
   {
@@ -26,12 +26,27 @@
   },
   {
     "name": "Unity",
-    "proficiency": 64,
+    "proficiency": 74,
     "color": "bg-secondary"
   },
   {
     "name": "Phaser",
     "proficiency": 54,
     "color": ""
+  },
+  {
+    "name": "MATLAB",
+    "proficiency": 12,
+    "color": "bg-danger"
+  },
+  {
+    "name": "Linux",
+    "proficiency": 20,
+    "color": "bg-success"
+  },
+  {
+    "name": "Rust",
+    "proficiency": 8,
+    "color": "bg-secondary"
   }
 ]

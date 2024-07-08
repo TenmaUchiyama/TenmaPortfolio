@@ -24,7 +24,7 @@
 
 <main class='main'>
 	{#each projects as prj}
-	<div class="card" style="width: 16rem; margin:20px;" >
+	<div class="card" style="width: 20rem; margin:20px; border-style: solid; border-width: 3px;">
 		<!-- svelte-ignore a11y-missing-attribute -->
 		{#if prj.videoContain === ""}
 			<img src={prj.imgPath} class="card-img-top img-fluid" style="height: 25%;">

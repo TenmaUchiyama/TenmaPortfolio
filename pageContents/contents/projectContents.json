@@ -1,5 +1,26 @@
 [
   {
+    "videoContain": "https://www.youtube.com/embed/nVNjKl2jo3c?si=SazsQ1XvBE1-zLSG",
+    "imgPath": "",
+    "title": {
+      "en": "xArm Real-Time Pick-and-Place Using Hand Gestures with Meta Quest 3",
+      "ja": "MetaQuest3を利用したxArmリアルタイムピックアンドプレイス",
+      "th": "xArm คัดเลือกและวางในเวลาจริงด้วยท่าทางมือกับ Meta Quest 3"
+    },
+    "description": {
+      "ja": "ROS2を使ったxArmプログラムの勉強過程で作成しました。Meta Quest 3を使ったMixed RealityアプリはUnityで作成し、手の位置情報と掴む・離すの指のジェスチャーを認識して、ソケット通信でROS2に信号を送ることでxArmを操作することができます。",
+      "en": "I created this as part of my study of xArm programming using ROS2. The Mixed Reality application using Meta Quest 3 is developed in Unity. It recognizes hand position information and the finger gestures for grasping and releasing, and sends signals to ROS2 via socket communication to control xArm.",
+      "th": "ฉันสร้างสิ่งนี้เป็นส่วนหนึ่งของการศึกษาการโปรแกรม xArm โดยใช้ ROS2 แอปพลิเคชัน Mixed Reality ที่ใช้ Meta Quest 3 ถูกพัฒนาใน Unity ซึ่งแอปนี้จะรู้จักข้อมูลตำแหน่งของมือและท่าทางนิ้วสำหรับการจับและปล่อย จากนั้นส่งสัญญาณไปยัง ROS2 ผ่านการสื่อสารทางซ็อกเก็ตเพื่อควบคุม xArm"
+    },
+    "skill": [
+      { "lang": "Unity", "level": "86", "color": "bg-info" },
+      { "lang": "C#", "level": "76", "color": "" },
+      { "lang": "Arduino", "level": "96", "color": "bg-success" },
+      { "lang": "C++", "level": "40", "color": "bg-warning" },
+      { "lang": "Mixed Reality", "level": "70", "color": "bg-danger" }
+    ]
+  },
+  {
     "videoContain": "https://www.youtube.com/embed/tFCa5PGTfbo?si=wFjFZ9yLt9C0I1oQ",
     "imgPath": "/portfolio-media/ProjectImg/SignLangColor.png",
     "title": {
