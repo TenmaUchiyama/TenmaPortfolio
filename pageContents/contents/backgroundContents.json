@@ -76,11 +76,19 @@
 
     {
       "title": "ImaCreate株式会社",
-      "position": "Internship",
+      "position": "Internship VR App Developer",
       "location": "Tokyo, Japan",
       "year": "November 2023",
       "contents": ["Develop VR Application"],
       "iconPath": "/portfolio-media/Imgs/ImaCreateLogo.jpeg"
+    },
+    {
+      "title" : "Sony Group Corporation",
+      "position": "Internship XR Software Engineer",
+      "location" : "Kanagawa, Japan", 
+      "year" : "September 2024", 
+      "contents" : ["Develop Remote Desktop Application for Sony's XR Device"],
+      "iconPath" :"/portfolio-media/Imgs/SONY.png"
     }
   ]
 }
