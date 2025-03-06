@@ -17,7 +17,8 @@
     "skill": [
       { "lang": "Unity", "level": "86", "color": "bg-info" },
       { "lang": "C#", "level": "76", "color": "" },
-      { "lang": "Python", "level": "76", "color": "" }
+      { "lang": "MetaQuest3", "level": "80", "color": "bg-danger" },
+      { "lang": "Mixed Reality", "level": "70", "color": "bg-danger" }
     ]
   },
   {
@@ -36,8 +37,7 @@
     "skill": [
       { "lang": "Unity", "level": "86", "color": "bg-info" },
       { "lang": "C#", "level": "76", "color": "" },
-      { "lang": "MetaQuest3", "level": "80", "color": "bg-danger" },
-      { "lang": "Mixed Reality", "level": "70", "color": "bg-danger" }
+      { "lang": "Python", "level": "76", "color": "" }
     ]
   },
   {
