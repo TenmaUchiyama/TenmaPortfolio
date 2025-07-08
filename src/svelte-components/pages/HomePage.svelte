@@ -17,6 +17,37 @@ import image from '/portfolio-media/profile-pic.jpg'
 		<h1>{content["home-content-greeting"][$displayLanguage]}</h1>
         <img class="profile-pic" src={image} alt=""> 
         <h1 style="font-size: xx-large; ">{content["home-content-name"][$displayLanguage]}</h1>
+
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin: 20px 0;">
+  <!-- 🇯🇵 日本 -->
+  <img src="flags/japan.svg" width="60" height="40" alt="Japan Flag" />
+
+  <!-- ➡️ -->
+  <img src="flags/arrow.svg" width="30" height="30" alt="arrow" />
+
+  <!-- 🇺🇸 アメリカ -->
+  <img src="flags/usa.svg" width="60" height="40" alt="USA Flag" />
+
+  <!-- ➡️ -->
+  <img src="flags/arrow.svg" width="30" height="30" alt="arrow" />
+
+  <!-- 🇹🇭 タイ -->
+  <img src="flags/thailand.svg" width="60" height="40" alt="Thailand Flag" />
+
+  <!-- ➡️ -->
+  <img src="flags/arrow.svg" width="30" height="30" alt="arrow" />
+
+  <!-- 🇬🇧 イギリス -->
+  <img src="flags/uk.svg" width="60" height="40" alt="UK Flag" />
+
+  <!-- ➡️ -->
+  <img src="flags/arrow.svg" width="30" height="30" alt="arrow" />
+
+  <!-- 🇯🇵 日本（再び） -->
+  <img src="flags/japan.svg" width="60" height="40" alt="Japan Flag" />
+</div>
+
+
         <h3 style="margin-bottom:10px;">{content["home-intro-school"][$displayLanguage]}</h3>
     
         <li class="sns-icons">
@@ -51,6 +82,8 @@ import image from '/portfolio-media/profile-pic.jpg'
     display: flex;
     width: 100%;
 	height: auto;
+      padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .profile, .introduction {
@@ -106,7 +139,9 @@ width: 2.5rem;
 	font-size: large;
 }
 
-
+.introduction ul li {
+  margin-bottom: 12px; /* 各項目の下に余白を追加 */
+}
 
 .hobby
 {
