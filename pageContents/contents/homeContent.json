@@ -49,6 +49,17 @@
     "en": "MSc Open Environment Science and Engineering, Computer Science at Keio University Interactive Media Lab",
     "th": "นิสิตปริญญาโท คอมพิวเตอร์ไซเอนซ์ ที่มหาวิทยาลัยเคอิโอ สาขาวิชา Interactive Media Lab"
   },
+  "home-label-research": {
+    "ja": "研究内容",
+    "en": "Research",
+    "th": "งานวิจัย"
+  },
+  "home-content-research": {
+    "ja": "XRデバイスとLLMを活用した空間認識型スマートホームの音声操作システムを開発中です。",
+    "en": "Developing a spatially-aware voice-controlled smart home system using XR devices and large language models (LLMs).",
+    "th": "กำลังพัฒนาระบบบ้านอัจฉริยะที่ควบคุมด้วยเสียง โดยใช้ XR และโมเดลภาษา LLM เพื่อให้สามารถรับรู้เชิงพื้นที่ได้"
+  },
+
   "home-label-interests": {
     "ja": "興味",
     "en": "Interests",

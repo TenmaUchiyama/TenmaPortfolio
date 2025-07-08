@@ -62,7 +62,8 @@ import image from '/portfolio-media/profile-pic.jpg'
 		<h2>{content["home-label-introduction"][$displayLanguage]}</h2>
         <ul>
             <li><b><u>{content["home-label-birthdate"][$displayLanguage]}</u></b>: {content["home-content-birthdate"][$displayLanguage]}</li>
-          <li><b><u>{content["home-label-job"][$displayLanguage]}</u></b>：学生</li>
+          <li><b><u>{content["home-label-job"][$displayLanguage]}</u></b>: {content["home-content-job"][$displayLanguage]}</li>
+          <li><b><u>{content["home-label-research"][$displayLanguage]}</u></b>: {content["home-content-research"][$displayLanguage]}</li>
                <li><b><u>{content["home-label-school"][$displayLanguage]}</u></b>: {content["home-content-school"][$displayLanguage]}</li>
            <li><b><u>{content["home-label-interests"][$displayLanguage]}</u></b>: {content["home-content-interests"][$displayLanguage]}</li>
              <li ><b><u>{content["home-label-hobby"][$displayLanguage]}</u></b>: 
